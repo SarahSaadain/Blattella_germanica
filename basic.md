@@ -8,9 +8,6 @@ docker ps
 docker exec -ti containername (the cointerID) sh
 earlGrey -g GCA_000762945.2_Bger_2.0_genomic.fna -s B.germanica -o earlGrey/ -c yes -t
 ```
-
-test
-
 -----
 trimming script:
 ```
