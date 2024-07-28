@@ -19,8 +19,7 @@ INPUT_DIR="/home/vetlinux04/Sarah/cockroach/aDNA/raw"
 OUTPUT_DIR="/home/vetlinux04/Sarah/cockroach/aDNA/trimmed"
 
 # Adapter sequences
-ADAPTER_A="ACACTCTTTCCCTACACGACGCTCTT"
-ADAPTER_G="CAAGCAGAAGACGGCATACGAGAT"
+ADAPTER_A="AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
 
 # Loop through each FASTQ file in the input directory
 for FILE in $INPUT_DIR/*_R1_001.fastq.gz; do
@@ -31,10 +30,8 @@ for FILE in $INPUT_DIR/*_R1_001.fastq.gz; do
   OUTPUT_FILE="$OUTPUT_DIR/${BASENAME%.fastq.gz}_trim.fastq.gz"
   
   # Run cutadapt
-  cutadapt -a $ADAPTER_A -g $ADAPTER_G -o $OUTPUT_FILE $FILE
+  cutadapt -a $ADAPTER_A -e 0.1 -O 5 -m 20 -q 20 -o $OUTPUT_FILE $FILE
 done
 ```
-
-tried the same with A and G reversed
 
 
