@@ -38,3 +38,4 @@ done
 -m 20: Discards reads shorter than 20 bases after trimming.
 -q 20: Trims low-quality bases from the 3' end before adapter removal.
 
+this increased the quality to 12 to 24
