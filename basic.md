@@ -39,3 +39,6 @@ done
 -q 20: Trims low-quality bases from the 3' end before adapter removal.
 
 this increased the quality to 12 to 24
+
+The adapter I got from a Illumina pdf: https://dnatech.genomecenter.ucdavis.edu/wp-content/uploads/2019/03/illumina-adapter-sequences-2019-1000000002694-10.pdf
+its the adapter used for TruSeq Single Indexes
