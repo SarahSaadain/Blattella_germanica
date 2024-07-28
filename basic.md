@@ -8,3 +8,33 @@ docker ps
 docker exec -ti containername (the cointerID) sh
 earlGrey -g GCA_000762945.2_Bger_2.0_genomic.fna -s B.germanica -o earlGrey/ -c yes -t
 ```
+
+-----
+trimming script:
+```
+#!/bin/bash
+
+# Define input and output directories
+INPUT_DIR="/home/vetlinux04/Sarah/cockroach/aDNA/raw"
+OUTPUT_DIR="/home/vetlinux04/Sarah/cockroach/aDNA/trimmed"
+
+# Adapter sequences
+ADAPTER_A="ACACTCTTTCCCTACACGACGCTCTT"
+ADAPTER_G="CAAGCAGAAGACGGCATACGAGAT"
+
+# Loop through each FASTQ file in the input directory
+for FILE in $INPUT_DIR/*_R1_001.fastq.gz; do
+  # Extract the base name of the file
+  BASENAME=$(basename $FILE)
+  
+  # Define the output file name
+  OUTPUT_FILE="$OUTPUT_DIR/${BASENAME%.fastq.gz}_trim.fastq.gz"
+  
+  # Run cutadapt
+  cutadapt -a $ADAPTER_A -g $ADAPTER_G -o $OUTPUT_FILE $FILE
+done
+```
+
+tried the same with A and G reversed
+
+
