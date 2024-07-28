@@ -33,5 +33,8 @@ for FILE in $INPUT_DIR/*_R1_001.fastq.gz; do
   cutadapt -a $ADAPTER_A -e 0.1 -O 5 -m 20 -q 20 -o $OUTPUT_FILE $FILE
 done
 ```
-
+-e 0.1: Allows up to 10% errors in the adapter sequence.
+-O 5: Requires at least 5 base pairs of overlap between the adapter and the read.
+-m 20: Discards reads shorter than 20 bases after trimming.
+-q 20: Trims low-quality bases from the 3' end before adapter removal.
 
