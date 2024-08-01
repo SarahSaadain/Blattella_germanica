@@ -72,8 +72,11 @@ to open environment:
 ```
 conda activate SS_Kraken2
 ```
-it didn't show that I am in the right environment and so I don't need to always double check with conda info I configured the promt by adding this to the .zshrc after nano ~/.zshrc
+it activated the right environment but didn't show that I am in the right environment (I double checked with "conda info"). Therefore I configured the promt by doing:
 
+```
+nano ~/.zshrc
+```
 ```
 # Set the prompt to show the active conda environment
 function set_conda_prompt {
