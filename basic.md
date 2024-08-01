@@ -13,7 +13,7 @@ earlGrey -g GCA_000762945.2_Bger_2.0_genomic.fna -s B.germanica -o earlGrey/ -c 
 did not work because ref genome is not of good quality
 
 -----
-aDNA data:
+aDNA data
 
 aDNA from 3 (150y old) samples, two different libary preps used:  
 296004: Shapk (SC1)  
