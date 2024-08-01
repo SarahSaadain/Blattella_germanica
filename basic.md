@@ -71,7 +71,13 @@ conda create -n SS_Kraken2 kraken2 bracken (install Kraken2 and Bracken)
 to open environment:
 ```
 conda activate SS_Kraken2
+```
+
+double check if it's the right environment:
+```
 conda info --envs (to double check if I am on the right environment: if the * is next to SS_Kraken2 I am in this envornment)
-conda activate (to go back to base)
+conda activate (to go back to base)  
+or  
+conda info
 ```
 
