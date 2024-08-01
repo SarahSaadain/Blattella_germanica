@@ -1,4 +1,4 @@
-##Earlgrey
+Earlgrey with publically available data:
 
 got ref genome from NCBI to Roco with
 ```
@@ -10,7 +10,20 @@ docker ps
 docker exec -ti containername (the cointerID) sh
 earlGrey -g GCA_000762945.2_Bger_2.0_genomic.fna -s B.germanica -o earlGrey/ -c yes -t
 ```
+did not work because ref genome is not of good quality
+
 -----
+aDNA data:
+
+aDNA from 3 (150y old) samples, two different libary preps used:
+296004: Shapk (SC1)
+296005: Shapk (SC2)
+296006: Shapk (SC3)
+296007: Dabney (DC1)
+296008: Dabney (DC2)
+296009: Dabney (DC3)
+296010: Library blank (LB)
+
 trimming script:
 ```
 #!/bin/bash
