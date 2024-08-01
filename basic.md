@@ -15,14 +15,14 @@ did not work because ref genome is not of good quality
 -----
 aDNA data:
 
-aDNA from 3 (150y old) samples, two different libary preps used:
-296004: Shapk (SC1)
-296005: Shapk (SC2)
-296006: Shapk (SC3)
-296007: Dabney (DC1)
-296008: Dabney (DC2)
-296009: Dabney (DC3)
-296010: Library blank (LB)
+aDNA from 3 (150y old) samples, two different libary preps used:  
+296004: Shapk (SC1)  
+296005: Shapk (SC2)  
+296006: Shapk (SC3)  
+296007: Dabney (DC1)  
+296008: Dabney (DC2)  
+296009: Dabney (DC3)  
+296010: Library blank (LB)  
 
 trimming script:
 ```
