@@ -1,4 +1,4 @@
-#Earlgrey:
+_Earlgrey
 
 got ref genome from NCBI to Roco with
 ```
