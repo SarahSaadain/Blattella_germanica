@@ -47,13 +47,24 @@ for FILE in $INPUT_DIR/*_R1_001.fastq.gz; do
   cutadapt -a $ADAPTER_A -e 0.1 -O 5 -m 20 -q 20 -o $OUTPUT_FILE $FILE
 done
 ```
--e 0.1: Allows up to 10% errors in the adapter sequence.
--O 5: Requires at least 5 base pairs of overlap between the adapter and the read.
--m 20: Discards reads shorter than 20 bases after trimming.
--q 20: Trims low-quality bases from the 3' end before adapter removal.
+-e 0.1: Allows up to 10% errors in the adapter sequence.  
+-O 5: Requires at least 5 base pairs of overlap between the adapter and the read.  
+-m 20: Discards reads shorter than 20 bases after trimming.  
+-q 20: Trims low-quality bases from the 3' end before adapter removal.  
+  
+this increased the quality from 12 to 24  
 
-this increased the quality from 12 to 24
+The adapter I got from a Illumina pdf: https://dnatech.genomecenter.ucdavis.edu/wp-content/uploads/2019/03/illumina-adapter-sequences-2019-1000000002694-10.pdf  
+its the adapter used for TruSeq Single Indexes  
+its TruSeq Universal Adapter (P7 Adapter): AGATCGGAAGAGCACACGTCTGAACTCCAGTCA  
 
-The adapter I got from a Illumina pdf: https://dnatech.genomecenter.ucdavis.edu/wp-content/uploads/2019/03/illumina-adapter-sequences-2019-1000000002694-10.pdf
-its the adapter used for TruSeq Single Indexes
-its TruSeq Universal Adapter (P7 Adapter): AGATCGGAAGAGCACACGTCTGAACTCCAGTCA
+installed Kraken2 on vetlinux01
+```
+conda init (to initialize conda)
+conda config --add channels defaults (add the default channels)
+conda config --add channels bioconda (add the bioconda channel)
+conda config --add channels conda-forge (add the conda-forge channel)
+conda config --set channel_priority strict (set channel priority to strict)
+conda create -n SS_Kraken2 kraken2 bracken (install Kraken2 and Bracken)
+```
+
