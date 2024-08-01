@@ -58,7 +58,8 @@ The adapter I got from a Illumina pdf: https://dnatech.genomecenter.ucdavis.edu/
 its the adapter used for TruSeq Single Indexes  
 its TruSeq Universal Adapter (P7 Adapter): AGATCGGAAGAGCACACGTCTGAACTCCAGTCA  
 
-installed Kraken2 on vetlinux01
+----------------
+Installation of Kraken2 on vetlinux01
 ```
 conda init (to initialize conda)
 conda config --add channels defaults (add the default channels)
@@ -90,3 +91,13 @@ then I used
 ```
 source ~/.zshrc
 ```
+----------
+run Kraken2:
+```
+kraken2 --db /Volumes/Temp2/KrakenDB/nt --threads 10 --gzip-compressed Blattella_germanica/universal_trimmed.fastq.gz --output Kraken2Bgermanica
+```
+
+output:
+27280436 sequences (1221.42 Mbp) processed in 43.650s (37499.2 Kseq/m, 1678.94 Mbp/m).  
+  905467 sequences classified (3.32%)  
+  26374969 sequences unclassified (96.68%)
