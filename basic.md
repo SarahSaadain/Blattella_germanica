@@ -192,6 +192,11 @@ awk '$1 == "C" {print $3}' Kraken2Bgermanica_aDNA.txt | sort | uniq -c | sort -n
   23198 543 - Enterobacterales
   19899 9606 - Homo sapiens
 
+get the taxon ids with the most hits in everything but U
+```
+awk '$1 != "U" {print $3}' Kraken2Bgermanica_raw.txt | sort | uniq -c | sort -nr | head -n 5
+```
+
 ------
 on Roco and/or vetlinux04:
 ```
