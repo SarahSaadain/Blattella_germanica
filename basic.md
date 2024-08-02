@@ -24,11 +24,13 @@ aDNA from 3 (150y old) samples, two different libary preps used:
 296009: Dabney (DC3)  
 296010: Library blank (LB)  
 
+-----
 **ADAPTER**  
 Illumina pdf: https://dnatech.genomecenter.ucdavis.edu/wp-content/uploads/2019/03/illumina-adapter-sequences-2019-1000000002694-10.pdf  
 its the adapter used for TruSeq Single Indexes  
 its TruSeq Universal Adapter (P7 Adapter): AGATCGGAAGAGCACACGTCTGAACTCCAGTCA 
 
+-----
 **TRIMMING**
 ```
 #!/bin/bash
@@ -83,7 +85,7 @@ for FILE in $INPUT_DIR/*_R1_001.fastq.gz; do
   cutadapt -a $ADAPTER_A -e 0.1 -O 5 -m 1 -q 5 -o $OUTPUT_FILE $FILE
 done
 ```
-
+----
 **QUALITY CONTROL**
 ```
 fastqc -o /home/vetlinux04/Sarah/cockroach/aDNA/fastqc_trimmed /home/vetlinux04/Sarah/cockroach/aDNA/trimmed/*_R1_001_trim.fastq.gz
