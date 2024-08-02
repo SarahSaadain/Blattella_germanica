@@ -196,16 +196,16 @@ get the taxon ids with the most hits in everything but U
 ```
 awk '$1 != "U" {print $3}' Kraken2Bgermanica_raw.txt | sort | uniq -c | sort -nr | head -n 5
 ```
-12149497 7962 - Karpfen
-2367994 2759 - Cellular organisms ?
-1968948 1 - ?
-1884534 131567 - Archae
-1716649 29278 - Adapter ?
-1377821 1306438 - Fargesia denudata (plant)
-1163784 29442 - Pseudomonas tolaasii 
- 955329 2081755 - Cloning vector pCA-DEST2303
- 470272 33213 - Bilatera
- 429513 6973 - Blattella germanica
+12149497 7962 - Karpfen  
+2367994 2759 - Cellular organisms ?  
+1968948 1 - ?  
+1884534 131567 - Archae  
+1716649 29278 - Adapter ?  
+1377821 1306438 - Fargesia denudata (plant)  
+1163784 29442 - Pseudomonas tolaasii   
+ 955329 2081755 - Cloning vector pCA-DEST2303  
+ 470272 33213 - Bilatera  
+ 429513 6973 - Blattella germanica  
 
 ------
 on Roco and/or vetlinux04:
