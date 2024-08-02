@@ -180,4 +180,8 @@ get the taxon ids with the most hits
 ```
 awk '$1 == "C" {print $3}' Kraken2Bgermanica_aDNA.txt | sort | uniq -c | sort -nr | head -5
 ```
-
+368741 6973 - B. germanica
+  46668 331104 - Blattabacterium sp. (Blattella germanica) str. Bge
+  26002 2759 - cellular organisms ?
+  23198 543 - Enterobacterales
+  19899 9606 - Homo sapiens
