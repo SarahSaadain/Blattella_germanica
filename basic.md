@@ -24,7 +24,7 @@ aDNA from 3 (150y old) samples, two different libary preps used:
 296009: Dabney (DC3)  
 296010: Library blank (LB)  
 
-**ADAPTER**
+**ADAPTER**  
 Illumina pdf: https://dnatech.genomecenter.ucdavis.edu/wp-content/uploads/2019/03/illumina-adapter-sequences-2019-1000000002694-10.pdf  
 its the adapter used for TruSeq Single Indexes  
 its TruSeq Universal Adapter (P7 Adapter): AGATCGGAAGAGCACACGTCTGAACTCCAGTCA 
