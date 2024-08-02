@@ -148,3 +148,8 @@ grep -v '^U' Kraken2Bgermanica_aDNA.txt > filtered_output.txt
 ```
 awk '$1 == "C" {print $3}' Kraken2Bgermanica_aDNA.txt | sort -u > taxon_ids.txt
 ```
+
+looking only for the B. germanica taxon id:
+```
+awk '$1 == "C" && $3 == "6973"' Kraken2Bgermanica_aDNA.txt > filtered_6973.txt
+```
