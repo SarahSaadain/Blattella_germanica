@@ -185,3 +185,9 @@ awk '$1 == "C" {print $3}' Kraken2Bgermanica_aDNA.txt | sort | uniq -c | sort -n
   26002 2759 - cellular organisms ?
   23198 543 - Enterobacterales
   19899 9606 - Homo sapiens
+
+------
+on Roco:
+```
+conda activate bwa-env
+```
