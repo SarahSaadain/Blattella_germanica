@@ -144,3 +144,7 @@ get the lines that are not U (unclassified)
 ```
 grep -v '^U' Kraken2Bgermanica_aDNA.txt > filtered_output.txt
 ```
+
+```
+awk '$1 == "C" {print $3}' Kraken2Bgermanica_aDNA.txt | sort -u > taxon_ids.txt
+```
