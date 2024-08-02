@@ -24,6 +24,11 @@ aDNA from 3 (150y old) samples, two different libary preps used:
 296009: Dabney (DC3)  
 296010: Library blank (LB)  
 
+
+concatinate all files for Kraken2 test
+```
+cat *.fastq.gz > concatenated.fastq.gz
+```
 -----
 **ADAPTER**  
 Illumina pdf: https://dnatech.genomecenter.ucdavis.edu/wp-content/uploads/2019/03/illumina-adapter-sequences-2019-1000000002694-10.pdf  
