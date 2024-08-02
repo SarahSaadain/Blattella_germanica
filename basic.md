@@ -164,9 +164,9 @@ grep '6973' filtered_6973.txt | wc -l
 same number
 
 tried the same with the seven-spotted ladybug taxon Id (as a random check how often other species occur)
-awk '$1 == "C" && $3 == "41139"' Kraken2Bgermanica_aDNA.txt | wc -l
+```awk '$1 == "C" && $3 == "41139"' Kraken2Bgermanica_aDNA.txt | wc -l```
 did not occur once
 
 tried the same with the human taxon Id
-awk '$1 == "C" && $3 == "9606"' Kraken2Bgermanica_aDNA.txt | wc -l
+```awk '$1 == "C" && $3 == "9606"' Kraken2Bgermanica_aDNA.txt | wc -l```
 found it 19899
