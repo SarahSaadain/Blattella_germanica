@@ -175,3 +175,9 @@ did not occur once
 tried the same with the human taxon Id  
 ```awk '$1 == "C" && $3 == "9606"' Kraken2Bgermanica_aDNA.txt | wc -l```
 found it 19899
+
+get the taxon ids with the most hits
+```
+awk '$1 == "C" {print $3}' Kraken2Bgermanica_aDNA.txt | sort | uniq -c | sort -nr | head -5
+```
+
