@@ -1,4 +1,4 @@
-FINDING TEs IN REF GENOME
+#FINDING TEs IN REF GENOME 
 Earlgrey with publically available data:
 
 got ref genome from NCBI to Roco with
