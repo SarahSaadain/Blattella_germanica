@@ -153,7 +153,6 @@ looking only for the B. germanica taxon id:
 ```
 awk '$1 == "C" && $3 == "6973"' Kraken2Bgermanica_aDNA.txt > filtered_6973.txt
 ```
-
 ```
 awk '$1 == "C" && $3 == "6973"' Kraken2Bgermanica_aDNA.txt | wc -l
 ````
@@ -163,3 +162,7 @@ double checking:
 grep '6973' filtered_6973.txt | wc -l
 ````
 same number
+
+tried the same with the seven-spotted ladybug taxon Id (as a random check how often other species occur)
+awk '$1 == "C" && $3 == "41139"' Kraken2Bgermanica_aDNA.txt | wc -l
+did not occur once
