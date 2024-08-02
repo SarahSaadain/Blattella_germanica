@@ -187,7 +187,7 @@ awk '$1 == "C" {print $3}' Kraken2Bgermanica_aDNA.txt | sort | uniq -c | sort -n
   19899 9606 - Homo sapiens
 
 ------
-on Roco:
+on Roco and/or vetlinux04:
 ```
 conda activate bwa-env
 ```
