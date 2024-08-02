@@ -135,17 +135,17 @@ source ~/.zshrc
 kraken2 --db /Volumes/Temp2/KrakenDB/nt --threads 10 --gzip-compressed Blattella_germanica/universal_trimmed.fastq.gz --output Kraken2Bgermanica
 ```
 
-output using the universal_trimmed.fastq.gz (stringend cutadapt settings):
+output using the universal_trimmed.fastq.gz (stringend cutadapt settings): Kraken2Bgermanica.txt  
 27280436 sequences (1221.42 Mbp) processed in 43.650s (37499.2 Kseq/m, 1678.94 Mbp/m).  
   905467 sequences classified (3.32%)  
   26374969 sequences unclassified (96.68%)
   
-output using the concatenated_samples.fastq.gz (less stringent cutadapt settings):  
+output using the concatenated_samples.fastq.gz (less stringent cutadapt settings): Kraken2Bgermanica_aDNA.txt  
 30015710 sequences (1268.15 Mbp) processed in 43.569s (41335.3 Kseq/m, 1746.40 Mbp/m).  
   906698 sequences classified (3.02%)  
   29109012 sequences unclassified (96.98%)
 
-output using the raw_concatenated.fastq.gz (the raw sequences without adapters removed):  
+output using the raw_concatenated.fastq.gz (the raw sequences without adapters removed): Kraken2Bgermanica_raw.txt  
 30905708 sequences (3090.57 Mbp) processed in 186.839s (9924.8 Kseq/m, 992.48 Mbp/m).
   26787768 sequences classified (86.68%)
   4117940 sequences unclassified (13.32%)
