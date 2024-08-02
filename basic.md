@@ -135,7 +135,7 @@ output using the universal_trimmed.fastq.gz (stringend cutadapt settings):
   905467 sequences classified (3.32%)  
   26374969 sequences unclassified (96.68%)
   
-output using the concatenated_samples.fastq.gz (less stringent cutadapt settings):
-30015710 sequences (1268.15 Mbp) processed in 43.569s (41335.3 Kseq/m, 1746.40 Mbp/m).
-  906698 sequences classified (3.02%)
+output using the concatenated_samples.fastq.gz (less stringent cutadapt settings):  
+30015710 sequences (1268.15 Mbp) processed in 43.569s (41335.3 Kseq/m, 1746.40 Mbp/m).  
+  906698 sequences classified (3.02%)  
   29109012 sequences unclassified (96.98%)
