@@ -145,6 +145,12 @@ output using the concatenated_samples.fastq.gz (less stringent cutadapt settings
   906698 sequences classified (3.02%)  
   29109012 sequences unclassified (96.98%)
 
+output using the raw_concatenated.fastq.gz (the raw sequences without adapters removed):  
+30905708 sequences (3090.57 Mbp) processed in 186.839s (9924.8 Kseq/m, 992.48 Mbp/m).
+  26787768 sequences classified (86.68%)
+  4117940 sequences unclassified (13.32%)
+
+
 get the lines that are not U (unclassified)
 ```
 grep -v '^U' Kraken2Bgermanica_aDNA.txt > filtered_output.txt
