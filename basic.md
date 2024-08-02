@@ -153,3 +153,13 @@ looking only for the B. germanica taxon id:
 ```
 awk '$1 == "C" && $3 == "6973"' Kraken2Bgermanica_aDNA.txt > filtered_6973.txt
 ```
+
+```
+awk '$1 == "C" && $3 == "6973"' Kraken2Bgermanica_aDNA.txt | wc -l
+````
+finds it 368741 times  
+double checking:
+```
+grep '6973' filtered_6973.txt | wc -l
+````
+same number
