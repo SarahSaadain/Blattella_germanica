@@ -242,3 +242,11 @@ Select your reference genome file (GCA_003018175.1_Bger_1.1_genomic.fna).
 Load the BAM File:  
 Go to File > Load from File....  
 Select your BAM file (raw_concat_Bger1.1_aligned_sorted.bam). IGV will automatically detect the index file (.bai).  
+-> super scattered but widely distributed across the genome
+
+----
+GenomeDelta
+```
+bash /mnt/data2/sarah/cockrock/GD/GenomeDelta/linux/main.sh --fq universal_trimmed.fastq.gz --fa ref/GCA_000762945.1_Bger_1.0_genomic.fna --of GD --t 8
+```
+too low coverage, gave an Error (-1) after calculating coverage support for each gap step
