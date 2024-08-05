@@ -208,7 +208,7 @@ awk '$1 != "U" {print $3}' Kraken2Bgermanica_raw.txt | sort | uniq -c | sort -nr
  429513 6973 - Blattella germanica  
 
  -----
-**MAP aDNA READS TO REF GENOME**
+**MAP aDNA READS TO REF GENOME**  
 **indexed and aligned to ref genome**
 ```
 bwa index GCA_000762945.1_Bger_1.0_genomic.fna  
