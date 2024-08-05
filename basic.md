@@ -226,4 +226,10 @@ GCA_000762945.2_Bger_2.0_genomic.fna
 on Roco I indexed:  
 GCA_003018175.1_Bger_1.1_genomic.fna
 
+then
+```
+samtools view -Sb raw_concatenated_aligned.sam > raw_concatenated_aligned.bam
+samtools sort raw_concatenated_aligned.bam -o raw_concatenated_aligned_sorted.bam
+samtools index raw_concatenated_aligned_sorted.bam
+```
 
