@@ -196,7 +196,7 @@ get the taxon ids with the most hits in everything but U
 ```
 awk '$1 != "U" {print $3}' Kraken2Bgermanica_raw.txt | sort | uniq -c | sort -nr | head -n 5
 ```
-12149497 7962 - Cyprinus carpio (common carp)  (see this article: https://dgg32.medium.com/carp-in-the-soil-1168818d2191)
+12149497 7962 - Cyprinus carpio (common carp) (see this article: https://dgg32.medium.com/carp-in-the-soil-1168818d2191)  
 2367994 2759 - Eukaryota  
 1968948 1 - ?  
 1884534 131567 - Archae  
