@@ -207,6 +207,17 @@ awk '$1 != "U" {print $3}' Kraken2Bgermanica_raw.txt | sort | uniq -c | sort -nr
  470272 33213 - Bilatera  
  429513 6973 - Blattella germanica  
 
+ -----
+on vetlinux01
+I uploaded the 3 B. germanica reference genomes
+and indexed the one with
+```
+bwa index GCA_000762945.1_Bger_1.0_genomic.fna
+```
+
+then:
+
+
 ------
 on Roco and/or vetlinux04:
 ```
