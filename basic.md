@@ -233,9 +233,16 @@ samtools sort raw_concatenated_aligned.bam -o raw_concatenated_aligned_sorted.ba
 samtools index raw_concatenated_aligned_sorted.bam
 ```
 
-on my computer do
+on my computer:
+index reference genome
 ```
 samtools faidx GCA_000762945.1_Bger_1.0_genomic.fna
 ```
 
-view the indexed sorted.bam in igv viewer
+in IGV:
+Set the Reference Genome:
+Go to Genomes > Load Genome from File....
+Select your reference genome file (GCA_003018175.1_Bger_1.1_genomic.fna).
+Load the BAM File:
+Go to File > Load from File....
+Select your BAM file (raw_concat_Bger1.1_aligned_sorted.bam). IGV will automatically detect the index file (.bai).
