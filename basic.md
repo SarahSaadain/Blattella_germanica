@@ -239,10 +239,10 @@ index reference genome
 samtools faidx GCA_000762945.1_Bger_1.0_genomic.fna
 ```
 
-in IGV:
-Set the Reference Genome:
-Go to Genomes > Load Genome from File....
-Select your reference genome file (GCA_003018175.1_Bger_1.1_genomic.fna).
-Load the BAM File:
-Go to File > Load from File....
-Select your BAM file (raw_concat_Bger1.1_aligned_sorted.bam). IGV will automatically detect the index file (.bai).
+in IGV:  
+Set the Reference Genome:  
+Go to Genomes > Load Genome from File....  
+Select your reference genome file (GCA_003018175.1_Bger_1.1_genomic.fna).  
+Load the BAM File:  
+Go to File > Load from File....  
+Select your BAM file (raw_concat_Bger1.1_aligned_sorted.bam). IGV will automatically detect the index file (.bai).  
