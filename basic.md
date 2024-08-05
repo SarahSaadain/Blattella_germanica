@@ -232,4 +232,4 @@ samtools view -Sb raw_concatenated_aligned.sam > raw_concatenated_aligned.bam
 samtools sort raw_concatenated_aligned.bam -o raw_concatenated_aligned_sorted.bam
 samtools index raw_concatenated_aligned_sorted.bam
 ```
-
+view the indexed sorted.bam in igv viewer
