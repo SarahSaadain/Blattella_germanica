@@ -213,7 +213,7 @@ indexed and aligned like this:
 bwa index GCA_000762945.1_Bger_1.0_genomic.fna  
 bwa mem ref/GCA_000762945.1_Bger_1.0_genomic.fna raw_concatenated.fastq.gz > raw_concatenated_aligned.sam
 ```
-on vetlinux01 I did:
+on vetlinux01 I did:  
 GCA_000762945.1_Bger_1.0_genomic.fna  
 
 on vetlinux04 I indexed:  
