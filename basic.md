@@ -208,7 +208,7 @@ awk '$1 != "U" {print $3}' Kraken2Bgermanica_raw.txt | sort | uniq -c | sort -nr
  429513 6973 - Blattella germanica  
 
  -----
-indexed and aligned like this:
+**indexed and aligned to ref genome**
 ```
 bwa index GCA_000762945.1_Bger_1.0_genomic.fna  
 bwa mem ref/GCA_000762945.1_Bger_1.0_genomic.fna raw_concatenated.fastq.gz > raw_concatenated_aligned.sam
@@ -235,7 +235,7 @@ index reference genome
 samtools faidx GCA_000762945.1_Bger_1.0_genomic.fna
 ```
 
-in IGV:  
+**in IGV:**  
 Set the Reference Genome:  
 Go to Genomes > Load Genome from File....  
 Select your reference genome file (GCA_003018175.1_Bger_1.1_genomic.fna).  
@@ -245,7 +245,7 @@ Select your BAM file (raw_concat_Bger1.1_aligned_sorted.bam). IGV will automatic
 -> super scattered but widely distributed across the genome
 
 ----
-GenomeDelta
+**GenomeDelta**
 ```
 bash /mnt/data2/sarah/cockrock/GD/GenomeDelta/linux/main.sh --fq universal_trimmed.fastq.gz --fa ref/GCA_000762945.1_Bger_1.0_genomic.fna --of GD --t 8
 ```
