@@ -216,15 +216,11 @@ bwa mem ref/GCA_000762945.1_Bger_1.0_genomic.fna raw_concatenated.fastq.gz > raw
 on vetlinux01 I did:  
 GCA_000762945.1_Bger_1.0_genomic.fna  
 
-on vetlinux04 I indexed:  
-GCA_000762945.2_Bger_2.0_genomic.fna  
+on vetlinux04 I indexed:   
 GCA_003018175.1_Bger_1.1_genomic.fna  
   
 on my computer I did:  
 GCA_000762945.2_Bger_2.0_genomic.fna  
-
-on Roco I indexed:  
-GCA_003018175.1_Bger_1.1_genomic.fna
 
 then
 ```
