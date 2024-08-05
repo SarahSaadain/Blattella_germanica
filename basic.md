@@ -175,21 +175,21 @@ grep '6973' filtered_6973.txt | wc -l
 same number
 
 tried the same with the seven-spotted ladybug taxon Id (as a random check how often other species occur)  
-```awk '$1 == "C" && $3 == "41139"' Kraken2Bgermanica_aDNA.txt | wc -l```
+```awk '$1 == "C" && $3 == "41139"' Kraken2Bgermanica_aDNA.txt | wc -l```  
 did not occur once
 
 tried the same with the human taxon Id  
-```awk '$1 == "C" && $3 == "9606"' Kraken2Bgermanica_aDNA.txt | wc -l```
+```awk '$1 == "C" && $3 == "9606"' Kraken2Bgermanica_aDNA.txt | wc -l```  
 found it 19899
 
 get the taxon ids with the most hits
 ```
 awk '$1 == "C" {print $3}' Kraken2Bgermanica_aDNA.txt | sort | uniq -c | sort -nr | head -5
 ```
-368741 6973 - B. germanica
-  46668 331104 - Blattabacterium sp. (Blattella germanica) str. Bge
-  26002 2759 - cellular organisms ?
-  23198 543 - Enterobacterales
+368741 6973 - B. germanica  
+  46668 331104 - Blattabacterium sp. (Blattella germanica) str. Bge   
+  26002 2759 - cellular organisms ?  
+  23198 543 - Enterobacterales  
   19899 9606 - Homo sapiens
 
 get the taxon ids with the most hits in everything but U
