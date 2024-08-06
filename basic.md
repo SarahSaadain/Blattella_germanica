@@ -279,9 +279,10 @@ Generates paired-end reads (simulated_reads1.fq and simulated_reads2.fq) and a S
 -s 50: Standard deviation of 50 base pairs for fragment size.  
 -o simulated_reads: Prefix for the output files (e.g., simulated_reads1.fq, simulated_reads2.fq, simulated_reads.sam, etc.).
 
-upload simulated reads to vetlinux01  
+upload simulated reads to vetlinux01 and run Kraken2 to see what contaminated the ref genome
 ```
-kraken2 --db /Volumes/Temp2/KrakenDB/nt --threads 10 --paired simulated_reads1.fq simulated_reads2.fq --output Kraken2Bger_ref.txt```
+kraken2 --db /Volumes/Temp2/KrakenDB/nt --threads 10 --paired simulated_reads1.fq simulated_reads2.fq --output Kraken2Bger_ref.txt
+```
 
 --------
 **CREATE THE STANDARD KRAKEN2 DATABASE**  
