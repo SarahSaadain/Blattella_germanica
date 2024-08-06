@@ -260,6 +260,17 @@ ART_Illumina simulates Illumina reads from ref genome data
 conda activate arcitc_env
 art_illumina -ss HS25 -sam -i ref/GCA_000762945.2_Bger_2.0_genomic.fna -l 150 -f 30 -m 350 -s 50 -o simulated_reads
 ```
+Generates paired-end reads (simulated_reads1.fq and simulated_reads2.fq) and a SAM file (simulated_reads.sam) with the read alignments to the reference genome.  
+-ss HS25: Use the Illumina HiSeq 2500 error profile.  
+-sam: Output a SAM file with the read alignments.  
+-i ref/GCA_000762945.2_Bger_2.0_genomic.fna: Use the specified reference genome file.  
+-l 150: Generate reads of length 150 base pairs.  
+-f 30: Achieve 30-fold coverage of the reference genome.  
+-m 350: Mean fragment size of 350 base pairs.  
+-s 50: Standard deviation of 50 base pairs for fragment size.  
+-o simulated_reads: Prefix for the output files (e.g., simulated_reads1.fq, simulated_reads2.fq, simulated_reads.sam, etc.).
+
+
 --------
 **CREATE THE STANDARD KRAKEN" DATABASE**  
 
