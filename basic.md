@@ -261,7 +261,7 @@ too low coverage, gave an Error (-1) after calculating coverage support for each
 -------
 **ART_Illumina**  
 transform ref genome to fastq so I can use Kraken to see what contaminated the Bgerm ref genome
-ART_Illumina simulates Illumina reads from ref genome data
+ART_Illumina simulates Illumina reads from ref genome data (used it on Roco)
 ```
 conda activate arcitc_env
 art_illumina -ss HS25 -sam -i ref/GCA_000762945.2_Bger_2.0_genomic.fna -l 150 -f 30 -m 350 -s 50 -o simulated_reads
@@ -276,6 +276,9 @@ Generates paired-end reads (simulated_reads1.fq and simulated_reads2.fq) and a S
 -s 50: Standard deviation of 50 base pairs for fragment size.  
 -o simulated_reads: Prefix for the output files (e.g., simulated_reads1.fq, simulated_reads2.fq, simulated_reads.sam, etc.).
 
+upload simulated reads to vetlinux01  
+```
+kraken2 --db /Volumes/Temp2/KrakenDB/nt --threads 10 --paired simulated_reads1.fq simulated_reads2.fq --output Kraken2Bger_ref.txt```
 
 --------
 **CREATE THE STANDARD KRAKEN2 DATABASE**  
