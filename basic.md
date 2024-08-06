@@ -186,7 +186,7 @@ did not occur once
 
 tried the same with the human taxon Id  
 ```awk '$1 == "C" && $3 == "9606"' Kraken2Bgermanica_aDNA.txt | wc -l```  
-found it 19899
+found it 19899  
 
 get the taxon ids with the most hits
 ```
@@ -214,7 +214,11 @@ awk '$1 != "U" {print $3}' Kraken2Bgermanica_raw.txt | sort | uniq -c | sort -nr
  429513 6973 - Blattella germanica  
 
 I redid Kraken2 with concat_trimmed_withoutLB.fastq.gz to produce --output Kraken2Bger_withoutLB.txt  
-(in this I removed the library blank file: 296010_S31_R1_001.fastq.gz)
+(in this I removed the library blank file: 296010_S31_R1_001.fastq.gz):  
+29897699 sequences (1257.47 Mbp) processed in 465.368s (3854.7 Kseq/m, 162.13 Mbp/m).
+  903641 sequences classified (3.02%)
+  28994058 sequences unclassified (96.98%)
+the 5 most common taxons were the same as in the runs with the LB included
 
  -----
 **MAP aDNA READS TO REF GENOME**  
