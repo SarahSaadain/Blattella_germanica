@@ -32,8 +32,8 @@ cat *.fastq.gz > concatenated.fastq.gz
 
 concatinate files without LB (library blank) for Kraken2:  
 concat_raw_withoutLB.fastq.gz (untrimmed, without LB)  
-concat_trimmed_withoutLB.fastq.gz (with less stringent settings in cutadapt)  
-universal_concat_trimmed_withoutLB.fastq.gz (the normal cutadapt settings - more stringent)
+concat_trimmed_withoutLB.fastq.gz (with less stringent settings in cutadapt, without LB)  
+universal_concat_trimmed_withoutLB.fastq.gz (the normal cutadapt settings - more stringent, without LB)
 
 -----
 **ADAPTER**  
