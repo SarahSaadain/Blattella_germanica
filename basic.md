@@ -251,3 +251,5 @@ Select your BAM file (raw_concat_Bger1.1_aligned_sorted.bam). IGV will automatic
 bash /mnt/data2/sarah/cockrock/GD/GenomeDelta/linux/main.sh --fq universal_trimmed.fastq.gz --fa ref/GCA_000762945.1_Bger_1.0_genomic.fna --of GD --t 8
 ```
 too low coverage, gave an Error (-1) after calculating coverage support for each gap step
+
+-------
