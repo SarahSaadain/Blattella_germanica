@@ -29,6 +29,11 @@ concatinate all files for Kraken2 test
 ```
 cat *.fastq.gz > concatenated.fastq.gz
 ```
+
+concatinate files without LB (library blank) for Kraken2:
+concat_raw_withoutLB.fastq.gz
+concat_trimmed_withoutLB.fastq.gz
+
 -----
 **ADAPTER**  
 Illumina pdf: https://dnatech.genomecenter.ucdavis.edu/wp-content/uploads/2019/03/illumina-adapter-sequences-2019-1000000002694-10.pdf  
