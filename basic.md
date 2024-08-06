@@ -275,6 +275,5 @@ Generates paired-end reads (simulated_reads1.fq and simulated_reads2.fq) and a S
 **CREATE THE STANDARD KRAKEN" DATABASE**  
 
 ```
-kraken2-build --standard --db KrakenDB_2024
 kraken2-build --standard --threads 50 --db KrakenDB_2024
 ```
