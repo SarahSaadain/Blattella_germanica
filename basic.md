@@ -213,6 +213,9 @@ awk '$1 != "U" {print $3}' Kraken2Bgermanica_raw.txt | sort | uniq -c | sort -nr
  470272 33213 - Bilatera  
  429513 6973 - Blattella germanica  
 
+I redid Kraken2 with concat_trimmed_withoutLB.fastq.gz to produce --output Kraken2Bger_withoutLB.txt  
+(in this I removed the library blank file: 296010_S31_R1_001.fastq.gz)
+
  -----
 **MAP aDNA READS TO REF GENOME**  
 **indexed and aligned to ref genome**
