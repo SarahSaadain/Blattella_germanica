@@ -253,9 +253,17 @@ bash /mnt/data2/sarah/cockrock/GD/GenomeDelta/linux/main.sh --fq universal_trimm
 too low coverage, gave an Error (-1) after calculating coverage support for each gap step
 
 -------
+**ART_Illumina***
 transform ref genome to fastq so I can use Kraken to see what contaminated the Bgerm ref genome
 ART_Illumina simulates Illumina reads from ref genome data
 ```
 conda activate arcitc_env
 art_illumina -ss HS25 -sam -i ref/GCA_000762945.2_Bger_2.0_genomic.fna -l 150 -f 30 -m 350 -s 50 -o simulated_reads
+```
+--------
+**CREATE THE STANDARD KRAKEN" DATABASE**  
+
+```
+kraken2-build --standard --db KrakenDB_2024
+kraken2-build --standard --threads 50 --db KrakenDB_2024
 ```
