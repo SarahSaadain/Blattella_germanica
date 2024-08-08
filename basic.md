@@ -221,10 +221,13 @@ I redid Kraken2 with concat_trimmed_withoutLB.fastq.gz to produce Kraken2Bger_wi
 the 5 most common taxons were the same as in the runs with the LB included  
 
 I did Kraken2 with the ref genome that I split into reads with Art_illumina:  
-```kraken2 --db /Volumes/Temp2/KrakenDB/nt \  
+```
+kraken2 --db /Volumes/Temp2/KrakenDB/nt \  
         --threads 10 \  
         --paired /Volumes/Temp2/ssaadain/Art_Illumina/Bger2.0/simulated_reads1.fq /Volumes/Temp2/ssaadain/Art_Illumina/Bger2.0/simulated_reads2.fq \  
-        --output Kraken2Bger2.0_ref.txt```  
+        --output Kraken2Bger2.0_ref.txt
+```  
+
 Loading database information... done.  
 172998887 sequences (51899.67 Mbp) processed in 20628.859s (503.2 Kseq/m, 150.95 Mbp/m).  
   35687906 sequences classified (20.63%)  
@@ -284,11 +287,13 @@ too low coverage, gave an Error (-1) after calculating coverage support for each
 -------
 **ART_Illumina**  
 transform ref genome to fastq so I can use Kraken to see what contaminated the Bgerm ref genome
-ART_Illumina simulates Illumina reads from ref genome data (used it on Roco)
+ART_Illumina simulates Illumina reads from ref genome data (used it on Roco)  
+
 ```
 conda activate arcitc_env
 art_illumina -ss HS25 -sam -i ref/GCA_000762945.2_Bger_2.0_genomic.fna -l 150 -f 30 -m 350 -s 50 -o simulated_reads
 ```
+
 Generates paired-end reads (simulated_reads1.fq and simulated_reads2.fq) and a SAM file (simulated_reads.sam) with the read alignments to the reference genome.  
 -ss HS25: Use the Illumina HiSeq 2500 error profile.  
 -sam: Output a SAM file with the read alignments.  
