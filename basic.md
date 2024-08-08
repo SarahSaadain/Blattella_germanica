@@ -257,6 +257,11 @@ same with Bger1.0 ref genome
 160581312 sequences (48174.39 Mbp) processed in 1060.463s (9085.5 Kseq/m, 2725.66 Mbp/m).  
   31826567 sequences classified (19.82%)  
   128754745 sequences unclassified (80.18%)  
+8473589 6973 - Blattella germanica  
+1542698 2759 cellular organisms ?  
+1092662 131567 - cellular organisms ? 
+1000409 33213 - Bilateria ?  
+713602 117571 - Euteleostomi (bony vertebrates) ? 
 
  -----
 **MAP aDNA READS TO REF GENOME**  
