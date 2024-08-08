@@ -175,7 +175,7 @@ output using the concatenated_samples.fastq.gz (less stringent cutadapt settings
   29109012 sequences unclassified (96.98%)
 
 output using the raw_concatenated.fastq.gz (the raw sequences without adapters removed): Kraken2Bgermanica_raw.txt  
-30905708 sequences (3090.57 Mbp) processed in 186.839s (9924.8 Kseq/m, 992.48 Mbp/m).
+30905708 sequences (3090.57 Mbp) processed in 186.839s (9924.8 Kseq/m, 992.48 Mbp/m).  
   26787768 sequences classified (86.68%)
   4117940 sequences unclassified (13.32%)
 
@@ -197,23 +197,12 @@ awk '$1 == "C" && $3 == "6973"' Kraken2Bgermanica_aDNA.txt > filtered_6973.txt
 awk '$1 == "C" && $3 == "6973"' Kraken2Bgermanica_aDNA.txt | wc -l
 ````
 finds it 368741 times  
-double checking:
-```
-grep '6973' filtered_6973.txt | wc -l
-````
-same number
 
 tried the same with the seven-spotted ladybug taxon Id (as a random check how often other species occur)  
 ```
 awk '$1 == "C" && $3 == "41139"' Kraken2Bgermanica_aDNA.txt | wc -l
 ```  
 did not occur once
-
-tried the same with the human taxon Id  
-```
-awk '$1 == "C" && $3 == "9606"' Kraken2Bgermanica_aDNA.txt | wc -l
-```  
-found it 19899  
 
 get the taxon ids with the most hits
 ```
@@ -247,14 +236,13 @@ I redid Kraken2 with concat_trimmed_withoutLB.fastq.gz to produce Kraken2Bger_wi
   28994058 sequences unclassified (96.98%)  
 the 5 most common taxons were the same as in the runs with the LB included  
 
-I did Kraken2 with the ref genome that I split into simulated reads with Art_illumina:  
+I did Kraken2 with the ref genome Bger2.0 that I split into simulated reads with Art_illumina:  
 ```
 kraken2 --db /Volumes/Temp2/KrakenDB/nt \  
         --threads 10 \  
         --paired /Volumes/Temp2/ssaadain/Art_Illumina/Bger2.0/simulated_reads1.fq /Volumes/Temp2/ssaadain/Art_Illumina/Bger2.0/simulated_reads2.fq \  
         --output Kraken2Bger2.0_ref.txt
 ```  
-
 172998887 sequences (51899.67 Mbp) processed in 20628.859s (503.2 Kseq/m, 150.95 Mbp/m).  
   35687906 sequences classified (20.63%)  
   137310981 sequences unclassified (79.37%)  
@@ -264,6 +252,11 @@ and those are the 5 most common hits:
 1167144 131567 - cellular organisms ?  
 1110270 33213 - Bilateria ?  
 779169 117571 - Euteleostomi (bony vertebrates) ?  
+
+same with Bger1.0 ref genome  
+160581312 sequences (48174.39 Mbp) processed in 1060.463s (9085.5 Kseq/m, 2725.66 Mbp/m).  
+  31826567 sequences classified (19.82%)  
+  128754745 sequences unclassified (80.18%)  
 
  -----
 **MAP aDNA READS TO REF GENOME**  
