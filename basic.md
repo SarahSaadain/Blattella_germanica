@@ -101,7 +101,10 @@ done
 ```
 fastqc -o /home/vetlinux04/Sarah/cockroach/aDNA/fastqc_trimmed /home/vetlinux04/Sarah/cockroach/aDNA/trimmed/*_R1_001_trim.fastq.gz
 ```
-
+compare fastqc outputs (without 296010, which is the library blank)
+```
+multiqc . -f -i "Cockroach Samples FastQC Report" --ignore "*I1*" --ignore "*I2*" --ignore "*296010*"
+```
 ----------------
 **INSTALLATION** of Kraken2 on vetlinux01
 ```
