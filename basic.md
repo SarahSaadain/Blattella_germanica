@@ -220,21 +220,21 @@ I redid Kraken2 with concat_trimmed_withoutLB.fastq.gz to produce Kraken2Bger_wi
   28994058 sequences unclassified (96.98%)
 the 5 most common taxons were the same as in the runs with the LB included
 
-I did Kraken2 with the ref genome that I split into reads with Art_illumina:
- kraken2 --db /Volumes/Temp2/KrakenDB/nt \
-        --threads 10 \
-        --paired /Volumes/Temp2/ssaadain/Art_Illumina/Bger2.0/simulated_reads1.fq /Volumes/Temp2/ssaadain/Art_Illumina/Bger2.0/simulated_reads2.fq \
-        --output Kraken2Bger2.0_ref.txt
-Loading database information... done.
-172998887 sequences (51899.67 Mbp) processed in 20628.859s (503.2 Kseq/m, 150.95 Mbp/m).
-  35687906 sequences classified (20.63%)
+I did Kraken2 with the ref genome that I split into reads with Art_illumina:  
+ kraken2 --db /Volumes/Temp2/KrakenDB/nt \  
+        --threads 10 \  
+        --paired /Volumes/Temp2/ssaadain/Art_Illumina/Bger2.0/simulated_reads1.fq /Volumes/Temp2/ssaadain/Art_Illumina/Bger2.0/simulated_reads2.fq \  
+        --output Kraken2Bger2.0_ref.txt  
+Loading database information... done.  
+172998887 sequences (51899.67 Mbp) processed in 20628.859s (503.2 Kseq/m, 150.95 Mbp/m).  
+  35687906 sequences classified (20.63%)  
   137310981 sequences unclassified (79.37%)  
 and those are the 5 most common hits:  
-10282418 6973 - Blattella germanica
+10282418 6973 - Blattella germanica  
 1690615 2759 - cellular organisms ?  
 1167144 131567 - cellular organisms ?  
-1110270 33213 - Bilateria ?
- 779169 117571 - Euteleostomi (bony vertebrates) ?
+1110270 33213 - Bilateria ?  
+ 779169 117571 - Euteleostomi (bony vertebrates) ?  
 
  -----
 **MAP aDNA READS TO REF GENOME**  
