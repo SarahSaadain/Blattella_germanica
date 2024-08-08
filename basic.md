@@ -213,12 +213,28 @@ awk '$1 != "U" {print $3}' Kraken2Bgermanica_raw.txt | sort | uniq -c | sort -nr
  470272 33213 - Bilatera  
  429513 6973 - Blattella germanica  
 
-I redid Kraken2 with concat_trimmed_withoutLB.fastq.gz to produce --output Kraken2Bger_withoutLB.txt  
+I redid Kraken2 with concat_trimmed_withoutLB.fastq.gz to produce Kraken2Bger_withoutLB.txt  
 (in this I removed the library blank file: 296010_S31_R1_001.fastq.gz):  
 29897699 sequences (1257.47 Mbp) processed in 465.368s (3854.7 Kseq/m, 162.13 Mbp/m).
   903641 sequences classified (3.02%)
   28994058 sequences unclassified (96.98%)
 the 5 most common taxons were the same as in the runs with the LB included
+
+I did Kraken2 with the ref genome that I split into reads with Art_illumina:
+ kraken2 --db /Volumes/Temp2/KrakenDB/nt \
+        --threads 10 \
+        --paired /Volumes/Temp2/ssaadain/Art_Illumina/Bger2.0/simulated_reads1.fq /Volumes/Temp2/ssaadain/Art_Illumina/Bger2.0/simulated_reads2.fq \
+        --output Kraken2Bger2.0_ref.txt
+Loading database information... done.
+172998887 sequences (51899.67 Mbp) processed in 20628.859s (503.2 Kseq/m, 150.95 Mbp/m).
+  35687906 sequences classified (20.63%)
+  137310981 sequences unclassified (79.37%)  
+and those are the 5 most common hits:  
+10282418 6973 - Blattella germanica
+1690615 2759 - cellular organisms ?  
+1167144 131567 - cellular organisms ?  
+1110270 33213 - Bilateria ?
+ 779169 117571 - Euteleostomi (bony vertebrates) ?
 
  -----
 **MAP aDNA READS TO REF GENOME**  
