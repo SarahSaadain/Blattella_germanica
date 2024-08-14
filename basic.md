@@ -315,3 +315,12 @@ too low coverage, gave an Error (-1) after calculating coverage support for each
 ```
 kraken2-build --standard --threads 50 --db KrakenDB_2024
 ```
+-------
+
+**CENTRIFUGE**
+checking for contamination with Centrifuge as it should avoid the kmer problem
+```
+conda activate SS_Centrifuge
+````
+
+
