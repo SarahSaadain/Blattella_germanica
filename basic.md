@@ -323,4 +323,6 @@ checking for contamination with Centrifuge as it should avoid the kmer problem
 conda activate SS_Centrifuge
 ````
 
+later use Pavian to parse Centrifuge (I can also use it for Kraken2 and compare it)
+
 
