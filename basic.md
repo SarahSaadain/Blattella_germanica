@@ -331,11 +331,11 @@ later use Pavian to parse Centrifuge (I can also use it for Kraken2 and compare 
 samtools view -f 4 raw_concat_Bger1.1_aligned_sorted.bam | wc -l
 samtools view -c raw_concat_Bger1.1_aligned_sorted.bam
 ```
-number of unmapped reads: 11765670
-number of mapped reads: 19776094
-total reads: 31541764 (edited) 
+number of unmapped reads: 11765670  
+number of mapped reads: 19776094  
+total reads: 31541764  
 
-Proportion of endogenous reads= Number of mapped reads / Total reads x 100
+Proportion of endogenous reads= Number of mapped reads / Total reads x 100  
 ​
-19,776,094/31,541,764​ × 100 ≈ 62.71%
+19,776,094/31,541,764​ × 100 ≈ 62.71%  
 
