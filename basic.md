@@ -321,8 +321,21 @@ kraken2-build --standard --threads 50 --db KrakenDB_2024
 checking for contamination with Centrifuge as it should avoid the kmer problem
 ```
 conda activate SS_Centrifuge
-````
+nohup centrifuge -x /Volumes/Temp2/Centrifuge/nt -U /Volumes/Temp2/ssaadain/concat_trimmed_withoutLB.fastq.gz -S centrifuge_output.txt --report-file centrifuge_report.tsv -p 10 --verbose --seed 999 & disown
+```
 
 later use Pavian to parse Centrifuge (I can also use it for Kraken2 and compare it)
+--------
+**get number of endogenous reads**
+```
+samtools view -f 4 raw_concat_Bger1.1_aligned_sorted.bam | wc -l
+samtools view -c raw_concat_Bger1.1_aligned_sorted.bam
+```
+number of unmapped reads: 11765670
+number of mapped reads: 19776094
+total reads: 31541764 (edited) 
 
+Proportion of endogenous reads= Number of mapped reads / Total reads x 100
+​
+19,776,094/31,541,764​ × 100 ≈ 62.71%
 
