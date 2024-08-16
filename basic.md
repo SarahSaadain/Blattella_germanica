@@ -339,3 +339,28 @@ Proportion of endogenous reads= Number of mapped reads / Total reads x 10
 ​
 19,776,094/31,541,764​ × 100 ≈ 62.71%  
 
+or another option is
+```
+samtools flagstat raw_concat_Bger1.1_aligned_sorted.bam
+```
+output:  
+31541764 + 0 in total (QC-passed reads + QC-failed reads)  
+30905708 + 0 primary  
+0 + 0 secondary  
+636056 + 0 supplementary  
+0 + 0 duplicates  
+0 + 0 primary duplicates  
+19776094 + 0 mapped (62.70% : N/A)  
+19140038 + 0 primary mapped (61.93% : N/A)  
+0 + 0 paired in sequencing  
+0 + 0 read1  
+0 + 0 read2  
+0 + 0 properly paired (N/A : N/A)  
+0 + 0 with itself and mate mapped  
+0 + 0 singletons (N/A : N/A)  
+0 + 0 with mate mapped to a different chr  
+0 + 0 with mate mapped to a different chr (mapQ>=5)  
+
+
+
+
