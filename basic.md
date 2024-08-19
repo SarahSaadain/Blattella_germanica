@@ -323,6 +323,42 @@ checking for contamination with Centrifuge as it should avoid the kmer problem
 conda activate SS_Centrifuge
 nohup centrifuge -x /Volumes/Temp2/Centrifuge/nt -U /Volumes/Temp2/ssaadain/concat_trimmed_withoutLB.fastq.gz -S centrifuge_output.txt --report-file centrifuge_report.tsv -p 10 --verbose --seed 999 & disown
 ```
+get only hits where centrifuge found a match (could classify the reads):  
+```
+awk '$3 != 0' centrifuge_output.txt > centrifuge_hits.txt
+```
+look for specific taxon  
+```
+awk '$3 == 9606' centrifuge_output.txt > human_hits.txt
+awk '$3 == 6973' centrifuge_output.txt > cockroach_hits.txt
+```
+count hits:  
+```
+wc -l cockroach_hits.txt
+wc -l human_hits.txt
+```
+796083 cockroach_hits.txt  
+142314 human_hits.txt  
+
+get hits above a certain threshold:  
+```
+awk '$4 > 150' centrifuge_output.txt > high_score_hits.txt
+```
+count hits per TaxID:  
+```
+awk '{print $3}' centrifuge_hits.txt | sort | uniq -c | sort -nr > taxon_counts.txt
+```
+Best hits:
+796083 6973 - Blattella germanica
+169081 215358 - Larimichthys crocea (some weird fish)
+142314 9606 - Homo sapiens
+98697 331104 - Blattabacterium sp. (Blattella germanica) str. Bge
+86691 10090 - Mus musculus
+
+some centrifuge specific tools that needs some indexing before but I didn't do it yet:
+```
+centrifuge-kreport -x <index> centrifuge_output.txt > centrifuge_report.txt
+```
 
 later use Pavian to parse Centrifuge (I can also use it for Kraken2 and compare it)
 --------
