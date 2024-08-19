@@ -359,8 +359,8 @@ some centrifuge specific tools that needs some indexing before but I didn't do i
 ```
 centrifuge-kreport -x <index> centrifuge_output.txt > centrifuge_report.txt
 ```
-
 later use Pavian to parse Centrifuge (I can also use it for Kraken2 and compare it)
+
 --------
 **get number of endogenous reads**
 ```
