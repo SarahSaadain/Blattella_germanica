@@ -348,12 +348,12 @@ count hits per TaxID:
 ```
 awk '{print $3}' centrifuge_hits.txt | sort | uniq -c | sort -nr > taxon_counts.txt
 ```
-Best hits:
-796083 6973 - Blattella germanica
-169081 215358 - Larimichthys crocea (some weird fish)
-142314 9606 - Homo sapiens
-98697 331104 - Blattabacterium sp. (Blattella germanica) str. Bge
-86691 10090 - Mus musculus
+Best hits:  
+796083 6973 - Blattella germanica  
+169081 215358 - Larimichthys crocea (some weird fish)  
+142314 9606 - Homo sapiens  
+98697 331104 - Blattabacterium sp. (Blattella germanica) str. Bge  
+86691 10090 - Mus musculus  
 
 some centrifuge specific tools that needs some indexing before but I didn't do it yet:
 ```
