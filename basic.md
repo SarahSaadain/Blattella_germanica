@@ -364,10 +364,30 @@ later use Pavian to parse Centrifuge (I can also use it for Kraken2 and compare 
 --------
 **get number of endogenous reads**
 
-- align reads to ref genome
-- filter aligned reads that have mapped to ref genome with high confidence
-- count the aligned reads
+- align reads to ref genome  
+```
+bwa mem -t 8 ref/GCA_000762945.1_Bger_1.0_genomic.fna aDNA/trimmed_aDNA/concat_trimmed_withoutLB.fastq.gz > concat_trimmed_withoutLB_aligned.sam &
+samtools view -bS concat_trimmed_withoutLB_aligned.sam > concat_trimmed_withoutLB_aligned.bam
+```
+- filter aligned reads that have mapped to ref genome with high confidence  
+```
+samtools view -b -q 30 concat_trimmed_withoutLB_aligned.bam > filtered_concat_trimmed_withoutLB_aligned.bam
+```
+- count the aligned reads: 8 169 156
+```
+samtools view -c filtered_concat_trimmed_withoutLB_aligned.bam
+```
+
 - compare against total reads
+```
+gunzip -c concat_trimmed_withoutLB.fastq.gz | wc -l
+
+```
+ 119590796 is the number of lines, divided by 4 = 29 897 699 (total reads)  
+ percentage=(aligned reads / total reads) x 100  
+ percentage=(8 169 156 / 29 897 699 ) x 100  
+ percentage of endogenous reads is 27.26%
+
 - quality control (Kraken, Centrifuge etc to identify and quantify non-target reads). Substract these from your total reads
  
 ```
