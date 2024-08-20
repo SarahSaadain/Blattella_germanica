@@ -313,7 +313,7 @@ too low coverage, gave an Error (-1) after calculating coverage support for each
 **CREATE THE STANDARD KRAKEN2 DATABASE**  
 
 ```
-kraken2-build --standard --threads 50 --db KrakenDB_2024
+nohup yes | kraken2-build --standard --threads 30 --db KrakenDB_2024 > kraken2_build.log 2>&1 & disown
 ```
 -------
 
