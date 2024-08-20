@@ -363,6 +363,13 @@ later use Pavian to parse Centrifuge (I can also use it for Kraken2 and compare 
 
 --------
 **get number of endogenous reads**
+
+- align reads to ref genome
+- filter aligned reads that have mapped to ref genome with high confidence
+- count the aligned reads
+- compare against total reads
+- quality control (Kraken, Centrifuge etc to identify and quantify non-target reads). Substract these from your total reads
+ 
 ```
 samtools view -f 4 raw_concat_Bger1.1_aligned_sorted.bam | wc -l
 samtools view -c raw_concat_Bger1.1_aligned_sorted.bam
