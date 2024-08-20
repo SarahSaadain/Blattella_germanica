@@ -442,15 +442,15 @@ Unknown Library 19140038 0 636056 11765670 3320468 0 0 0,173483
 
 -------
 
-Kraken
-368 741 germanica
-46 668 bacterium
-19 899 humans
+Kraken  
+368 741 germanica  
+46 668 bacterium  
+19 899 humans  
 
-Centrifuge
-796 083 germanica
-169 081 bacterium
-142 314 human
+Centrifuge  
+796 083 germanica  
+169 081 bacterium  
+142 314 human  
 
 
 
