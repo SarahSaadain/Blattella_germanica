@@ -466,7 +466,7 @@ Centrifuge
 
 -------
 **CREATE THE STANDARD KRAKEN2 DATABASE**  
-
+I did this but I think I should have specified the kmers already here:
 ```
 nohup yes | kraken2-build --standard --threads 30 --db KrakenDB_2024 > kraken2_build.log 2>&1 & disown
 ```
