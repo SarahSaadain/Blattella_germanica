@@ -29,12 +29,6 @@ concatinate all files for Kraken2 test
 ```
 cat *.fastq.gz > concatenated.fastq.gz
 ```
-
-concatinate files without LB (library blank) for Kraken2:  
-concat_raw_withoutLB.fastq.gz (untrimmed, without LB)  
-concat_trimmed_withoutLB.fastq.gz (with less stringent settings in cutadapt, without LB)  
-universal_concat_trimmed_withoutLB.fastq.gz (the normal cutadapt settings - more stringent, without LB)
-
 -----
 **ADAPTER**  
 Illumina pdf: https://dnatech.genomecenter.ucdavis.edu/wp-content/uploads/2019/03/illumina-adapter-sequences-2019-1000000002694-10.pdf  
@@ -96,6 +90,15 @@ for FILE in $INPUT_DIR/*_R1_001.fastq.gz; do
   cutadapt -a $ADAPTER_A -e 0.1 -O 5 -m 1 -q 5 -o $OUTPUT_FILE $FILE
 done
 ```
+
+The different files I tested:   
+concatenated_samples.fast.gz (less stringend settings in cutadapt, but with LB)
+universal_concat_trimmed.fastq.gz (the normal cutadapt settings, but with LB)
+concat_raw_withoutLB.fastq.gz (untrimmed, without LB)  
+concat_trimmed_withoutLB.fastq.gz (with less stringent settings in cutadapt, without LB)  
+universal_concat_trimmed_withoutLB.fastq.gz (the normal cutadapt settings - more stringent, without LB)
+trimmed_Dabney_noLB.fastq.gz (less stringend settings in cutadapt - aDNA friendly, without LB, only Dabney!)
+
 ----
 **QUALITY CONTROL**
 ```
