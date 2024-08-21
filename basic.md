@@ -310,13 +310,6 @@ too low coverage, gave an Error (-1) after calculating coverage support for each
 
 -------
 
-**CREATE THE STANDARD KRAKEN2 DATABASE**  
-
-```
-nohup yes | kraken2-build --standard --threads 30 --db KrakenDB_2024 > kraken2_build.log 2>&1 & disown
-```
--------
-
 **CENTRIFUGE**
 checking for contamination with Centrifuge as it should avoid the kmer problem
 ```
@@ -461,7 +454,6 @@ LIBRARY UNPAIRED_READS_EXAMINED READ_PAIRS_EXAMINED SECONDARY_OR_SUPPLEMENTARY_R
 Unknown Library 19140038 0 636056 11765670 3320468 0 0 0,173483
 
 -------
-
 Kraken  
 368 741 germanica  
 46 668 bacterium  
@@ -472,7 +464,19 @@ Centrifuge
 169 081 bacterium  
 142 314 human  
 
+-------
+**CREATE THE STANDARD KRAKEN2 DATABASE**  
 
+```
+nohup yes | kraken2-build --standard --threads 30 --db KrakenDB_2024 > kraken2_build.log 2>&1 & disown
+```
+Kraken db with different kmers but pipe broke:
+```
+kraken2-build --build --kmer-len 23 --minimizer-len 17 --minimizer-spaces 4 --db KrakenDB_2024
+```
+(I needed to set the minimizer-spaces as otherwise the kmer and minimizer length wasn't excepted)
 
-
-
+custom download the nt database:  
+```
+sudo nohup bash -c "yes | kraken2-build --download-library nt --threads 10 --db ../KrakenDB_2024" > kraken2_library.log 2>&1 & disown
+```
