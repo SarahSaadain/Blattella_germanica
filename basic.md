@@ -271,6 +271,10 @@ redid Kraken2 with only Dabney as median read length is 44 & 46
 kraken2 --db /Volumes/Temp2/KrakenDB/nt --threads 5 --gzip-compressed Blattella_germanica/trimmed_Dabney_noLB.fastq.gz --output Kraken2Bger_Dabney_noLB1.txt
 ```
 got this:  
+11837854 sequences (588.09 Mbp) processed in 33.720s (21063.8 Kseq/m, 1046.42 Mbp/m).  
+  555388 sequences classified (4.69%)  
+  11282466 sequences unclassified (95.31%)  
+Hits:  
 234211 6973  
   24614 331104  
   15910 2759  
