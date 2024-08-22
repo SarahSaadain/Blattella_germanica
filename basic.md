@@ -266,6 +266,17 @@ same with Bger1.0 ref genome
 1000409 33213 - Bilateria ?  
 713602 117571 - Euteleostomi (bony vertebrates) ? 
 
+redid Kraken2 with only Dabney as median read length is 44 & 46  
+```
+kraken2 --db /Volumes/Temp2/KrakenDB/nt --threads 5 --gzip-compressed Blattella_germanica/trimmed_Dabney_noLB.fastq.gz --output Kraken2Bger_Dabney_noLB1.txt
+```
+got this:  
+234211 6973  
+  24614 331104  
+  15910 2759  
+  14393 543  
+  12010 9606  
+  
  -----
 **MAP aDNA READS TO REF GENOME**  
 **indexed and aligned to ref genome**
