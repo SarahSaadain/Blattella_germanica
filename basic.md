@@ -270,18 +270,30 @@ redid Kraken2 with only Dabney as median read length is 44 & 46
 ```
 kraken2 --db /Volumes/Temp2/KrakenDB/nt --threads 5 --gzip-compressed Blattella_germanica/trimmed_Dabney_noLB.fastq.gz --output Kraken2Bger_Dabney_noLB1.txt
 ```
-got this:  
+got this with the aDNA friendly cutadapt settigns (trimmed_Dabney_noLB.fastq.gz):  
 11837854 sequences (588.09 Mbp) processed in 33.720s (21063.8 Kseq/m, 1046.42 Mbp/m).  
   555388 sequences classified (4.69%)  
   11282466 sequences unclassified (95.31%)  
-  
-Hits:  
+
+got this with the stringent cutadapt settigns (trimmed_stringent_Dabney_noLB.fastq.gz):  
+11441571 sequences (580.11 Mbp) processed in 37.179s (18464.5 Kseq/m, 936.19 Mbp/m).  
+  554699 sequences classified (4.85%)  
+  10886872 sequences unclassified (95.15%)  
+
+got this with the aDNA friendly cutadapt settigns (trimmed_Dabney_noLB.fastq.gz):  
 234211 6973  
   24614 331104  
   15910 2759  
   14393 543  
   12010 9606  
-  
+
+got this with the stringent cutadapt settigns (trimmed_stringent_Dabney_noLB.fastq.gz):  
+ 234177 6973  
+  24613 331104  
+  15881 2759  
+  14385 543  
+  11999 9606  
+
  -----
 **MAP aDNA READS TO REF GENOME**  
 **indexed and aligned to ref genome**
