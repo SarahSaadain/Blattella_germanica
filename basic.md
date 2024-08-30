@@ -415,12 +415,18 @@ gunzip -c concat_trimmed_withoutLB.fastq.gz | wc -l
 - quality control (Kraken, Centrifuge etc to identify and quantify non-target reads). Substract these from your total reads
  
 ```
-samtools view -f 4 raw_concat_Bger1.1_aligned_sorted.bam | wc -l
+samtools view -f 4 raw_concat_Bger1.1_aligned_sorted.bam
+samtools view -F 4 raw_concat_Bger1.1_aligned_sorted.bam
 samtools view -c raw_concat_Bger1.1_aligned_sorted.bam
 ```
 number of unmapped reads: 11765670  
-number of mapped reads: 19776094  
+number of mapped reads: 19776094  mistake
 total reads: 31541764  
+
+number of unmapped reads substract
+number of mapped reads: 8169156 right
+total reads check right fastq file (without LB)
+
 
 Proportion of endogenous reads= Number of mapped reads / Total reads x 100  
 ​
