@@ -70,8 +70,8 @@ samtools view -c marked_duplicates.bam
 ```
 samtools view -c -f 1024 marked_duplicates.bam
 ```
-(Total Number of Reads / Number of Duplicate Reads) ×100 = Duplication Rate
-( / ) x100 = 
+(Number of Duplicate Reads / Number of Total Reads) ×100 = Duplication Rate
+( 1 594 605 / 30 481 946 ) x100 = 5.223 %
 
 
 
