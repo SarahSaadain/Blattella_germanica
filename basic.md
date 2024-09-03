@@ -412,3 +412,9 @@ custom download the nt database:
 ```
 sudo nohup bash -c "yes | kraken2-build --download-library nt --threads 10 --db ../KrakenDB_2024" > kraken2_library.log 2>&1 & disown
 ```
+------
+**checking the ref genome of B. germanica with BUSCO for contamination**
+on vetlinux I created a conda environment for busco
+```
+conda activate busco_env
+```
