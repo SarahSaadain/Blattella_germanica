@@ -418,3 +418,8 @@ on vetlinux I created a conda environment for busco
 ```
 conda activate busco_env
 ```
+-----
+check if carrier-RNA is still in raw data:
+```
+zgrep -o 'A\{5,\}' raw_concatenated.fastq.gz | wc -l
+```
