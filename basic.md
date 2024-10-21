@@ -443,3 +443,4 @@ count all 10xC or more and got 389659 hits
 count all 10xT or more and got 411371 hits  
 count all 10xG or more and got 282818 hits  
 
+(ein hit ist ein read mit 10 oder mehr A/G/C/T)
