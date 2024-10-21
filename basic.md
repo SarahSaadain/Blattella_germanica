@@ -422,17 +422,17 @@ conda activate busco_env
 **check if carrier-RNA is still in raw data:**
 
 ```
-gzcat 296004_S25_R1_001.fastq.gz | awk 'NR % 4 == 2' | awk '{count=gsub(/A{10,}/,""); if (count > 0) print count}' | tee hitsA10.txt | wc -l
+gzcat 296004_S25_R1_001.fastq.gz | awk 'NR % 4 == 2' | awk '{count=gsub(/A{10,}/,""); if (count > 0) print count}'| wc -l
 ```
 
-count reads in 296004_S25_R1_001.fastq.gz got 5632464
+count reads in 296004_S25_R1_001.fastq.gz got 5632464  
 
-count all 10xA or more and got 30072 hits
-count all 10xG or more and got 983328 hits
-count all 10xT or more and got 952648 hits
-count all 10xC or more and got 744762 hits
+count all 10xA or more and got 30072 hits  
+count all 10xG or more and got 983328 hits  
+count all 10xT or more and got 952648 hits  
+count all 10xC or more and got 744762 hits  
 
-count all 5xA or more and got 1798727 hits
-count all 5xG or more and got 1751945 hits
-count all 5xT or more and got 2037657 hits
-count all 5xC or more and got 2732492 hits
+count all 5xA or more and got 1798727 hits  
+count all 5xG or more and got 1751945 hits  
+count all 5xT or more and got 2037657 hits  
+count all 5xC or more and got 2732492 hits  
