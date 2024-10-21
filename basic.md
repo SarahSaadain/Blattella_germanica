@@ -437,9 +437,9 @@ count all 5xG or more and got 1751945 hits
 count all 5xT or more and got 2037657 hits  
 count all 5xC or more and got 2732492 hits  
 
-count reads in 296007_S28_R1_001.fastq.gz got 3928428
-count all 10xA or more and got 55445 hits
-count all 10xC or more and got 389659 hits
-count all 10xT or more and got 411371 hits
-count all 10xG or more and got 282818 hits
+count reads in 296007_S28_R1_001.fastq.gz got 3928428  
+count all 10xA or more and got 55445 hits  
+count all 10xC or more and got 389659 hits  
+count all 10xT or more and got 411371 hits  
+count all 10xG or more and got 282818 hits  
 
