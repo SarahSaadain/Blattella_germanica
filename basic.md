@@ -456,9 +456,9 @@ count all 10xC or more and got 846174 hits
 
 count reads in 296008_S29_R1_001.fastq.gz (Cockroach 2 Dabney) got 3874864
 count all 10xA or more and got 31513 hits  
-count all 10xT or more and got 337490 hits
-count all 10xG or more and got 190760 hits
-count all 10xC or more and got 278929 hits
+count all 10xT or more and got 337490 hits  
+count all 10xG or more and got 190760 hits  
+count all 10xC or more and got 278929 hits  
 
 -----
 count reads in 296006_S27_R1_001.fastq.gz (Cockroach 3 Shpak) got 5004690  
