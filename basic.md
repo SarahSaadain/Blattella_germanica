@@ -425,17 +425,34 @@ conda activate busco_env
 gzcat 296004_S25_R1_001.fastq.gz | awk 'NR % 4 == 2' | awk '{count=gsub(/A{10,}/,""); if (count > 0) print count}'| wc -l
 ```
 
-count reads in 296004_S25_R1_001.fastq.gz got 5632464  
+count reads in 296004_S25_R1_001.fastq.gz (Shpak) got 5632464  
 
 count all 10xA or more and got 30072 hits  
 count all 10xG or more and got 983328 hits  
 count all 10xT or more and got 952648 hits  
 count all 10xC or more and got 744762 hits  
 
-count reads in 296007_S28_R1_001.fastq.gz got 3928428  
+count reads in 296007_S28_R1_001.fastq.gz (Dabney) got 3928428  
 count all 10xA or more and got 55445 hits  
 count all 10xC or more and got 389659 hits  
 count all 10xT or more and got 411371 hits  
 count all 10xG or more and got 282818 hits  
 
 (ein hit ist ein read mit 10 oder mehr A/G/C/T)
+
+count reads in post-cutadapt 296004_S25_R1_001_trim.fastq.gz got 5434951  
+
+count all 10xA or more and got 28926 hits  
+count all 10xG or more and got 57609 hits  
+count all 10xT or more and got 25208 hits  
+count all 10xC or more and got 7999 hits
+
+---
+count reads in 296005_S26_R1_001.fastq.gz (Shpak) got 31490632  
+count all 10xA or more and got 35356 hits  
+count all 10xG or more and got 935241 hits  
+count all 10xT or more and got 846174 hits  
+count all 10xC or more and got 1212703 hits  
+
+
+
