@@ -445,7 +445,7 @@ count reads in post-cutadapt 296004_S25_R1_001_trim.fastq.gz (Cockroach 1 Shpak 
 count all 10xA or more and got 28926 hits  
 count all 10xT or more and got 25208 hits  
 count all 10xG or more and got 57609 hits  
-count all 10xC or more and got 7999 hits
+count all 10xC or more and got 7999 hits  
 
 ---
 count reads in 296005_S26_R1_001.fastq.gz (Cockroach 2 Shpak) got 7872658  
@@ -454,7 +454,7 @@ count all 10xT or more and got 1212703 hits
 count all 10xG or more and got 935241 hits  
 count all 10xC or more and got 846174 hits  
 
-count reads in 296008_S29_R1_001.fastq.gz (Cockroach 2 Dabney) got 3874864
+count reads in 296008_S29_R1_001.fastq.gz (Cockroach 2 Dabney) got 3874864  
 count all 10xA or more and got 31513 hits  
 count all 10xT or more and got 337490 hits  
 count all 10xG or more and got 190760 hits  
