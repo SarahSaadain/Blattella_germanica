@@ -425,34 +425,51 @@ conda activate busco_env
 gzcat 296004_S25_R1_001.fastq.gz | awk 'NR % 4 == 2' | awk '{count=gsub(/A{10,}/,""); if (count > 0) print count}'| wc -l
 ```
 
-count reads in 296004_S25_R1_001.fastq.gz (Shpak) got 5632464  
+count reads in 296004_S25_R1_001.fastq.gz (Cockroach 1 Shpak) got 5632464  
 
-count all 10xA or more and got 30072 hits  
-count all 10xG or more and got 983328 hits  
+count all 10xA or more and got 30072 hits    
 count all 10xT or more and got 952648 hits  
+count all 10xG or more and got 983328 hits  
 count all 10xC or more and got 744762 hits  
 
-count reads in 296007_S28_R1_001.fastq.gz (Dabney) got 3928428  
+count reads in 296007_S28_R1_001.fastq.gz (Cockroach 1 Dabney) got 3928428  
 count all 10xA or more and got 55445 hits  
-count all 10xC or more and got 389659 hits  
 count all 10xT or more and got 411371 hits  
 count all 10xG or more and got 282818 hits  
+count all 10xC or more and got 389659 hits  
 
 (ein hit ist ein read mit 10 oder mehr A/G/C/T)
 
-count reads in post-cutadapt 296004_S25_R1_001_trim.fastq.gz got 5434951  
+count reads in post-cutadapt 296004_S25_R1_001_trim.fastq.gz (Cockroach 1 Shpak trimmed) got 5434951  
 
 count all 10xA or more and got 28926 hits  
-count all 10xG or more and got 57609 hits  
 count all 10xT or more and got 25208 hits  
+count all 10xG or more and got 57609 hits  
 count all 10xC or more and got 7999 hits
 
 ---
-count reads in 296005_S26_R1_001.fastq.gz (Shpak) got 31490632  
+count reads in 296005_S26_R1_001.fastq.gz (Cockroach 2 Shpak) got 7872658  
 count all 10xA or more and got 35356 hits  
+count all 10xT or more and got 1212703 hits  
 count all 10xG or more and got 935241 hits  
-count all 10xT or more and got 846174 hits  
-count all 10xC or more and got 1212703 hits  
+count all 10xC or more and got 846174 hits  
 
+count reads in 296008_S29_R1_001.fastq.gz (Cockroach 2 Dabney) got 3874864
+count all 10xA or more and got 31513 hits  
+count all 10xT or more and got 337490 hits
+count all 10xG or more and got 190760 hits
+count all 10xC or more and got 278929 hits
 
+-----
+count reads in 296006_S27_R1_001.fastq.gz (Cockroach 3 Shpak) got 5004690  
+count all 10xA or more and got 13158 hits  
+count all 10xT or more and got 601347 hits  
+count all 10xG or more and got 621145 hits  
+count all 10xC or more and got 293672 hits  
+
+count reads in 296009_S30_R1_001.fastq.gz (Cockroach 3 Dabney) got 4304974  
+count all 10xA or more and got 18599 hits  
+count all 10xT or more and got 428373 hits  
+count all 10xG or more and got 185491 hits  
+count all 10xC or more and got 429474 hits  
 
