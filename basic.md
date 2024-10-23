@@ -473,3 +473,10 @@ count all 10xT or more and got 428373 hits
 count all 10xG or more and got 185491 hits  
 count all 10xC or more and got 429474 hits  
 
+--------
+**some plotting**
+
+unzip files
+```
+for file in *_001.fastq.gz; do gunzip -k "$file"; done 
+```
