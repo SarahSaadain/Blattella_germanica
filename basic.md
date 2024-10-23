@@ -480,3 +480,11 @@ unzip files
 ```
 for file in *_001.fastq.gz; do gunzip -k "$file"; done 
 ```
+
+difference  
+```gzcat 296004_S25_R1_001.fastq.gz | awk 'NR % 4 == 2' | grep -o 'A\{10,\}' |wc -l```  
+and  
+```gzcat 296004_S25_R1_001.fastq.gz | awk 'NR % 4 == 2' | grep 'AAAAAAAAAA' | wc -l```   
+The first command with grep -o 'A\{10,\}' counts every occurrence of 10 or more "A"s, even if multiple instances are in the same line.  
+The second command only checks for the presence of at least one instance of exactly 10 "A"s per line but doesn't count multiple occurrences.  
+Roberts and my command both counted the oresence of at least one, not multiple
