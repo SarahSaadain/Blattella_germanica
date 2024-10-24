@@ -426,7 +426,7 @@ gzcat 296004_S25_R1_001.fastq.gz | awk 'NR % 4 == 2' | awk '{count=gsub(/A{10,}/
 ```
 
 count reads in 296004_S25_R1_001.fastq.gz (Cockroach 1 Shpak) got 5632464  
-
+```grep -c "^@" 296004_S25_R1_001.fastq```  
 count all 10xA or more and got 30072 hits    
 count all 10xT or more and got 952648 hits  
 count all 10xG or more and got 983328 hits  
@@ -483,8 +483,14 @@ for file in *_001.fastq.gz; do gunzip -k "$file"; done
 
 difference  
 ```gzcat 296004_S25_R1_001.fastq.gz | awk 'NR % 4 == 2' | grep -o 'A\{10,\}' |wc -l```  
-and  
+counts every occurance of 10polyA or more (even if multiple instances are in the same line)  
+```gzcat 296004_S25_R1_001.fastq.gz | awk 'NR % 4 == 2' | awk '{count=gsub(/A{10,}/,""); if (count > 0) print count}'| wc -l``` 
+counts every line where at least one occurance of 10polyA or more is  
 ```gzcat 296004_S25_R1_001.fastq.gz | awk 'NR % 4 == 2' | grep 'AAAAAAAAAA' | wc -l```   
+counts every line where at least one occurance of 10polyA is
+
+Roberts and my command both count the presence of at least one per line
+
 The first command with grep -o 'A\{10,\}' counts every occurrence of 10 or more "A"s, even if multiple instances are in the same line.  
 The second command only checks for the presence of at least one instance of exactly 10 "A"s per line but doesn't count multiple occurrences.  
-Roberts and my command both counted the oresence of at least one, not multiple
+
