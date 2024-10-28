@@ -1,7 +1,7 @@
 **Estimate of the percentage of endogenous reads and their duplication rate**
 
 - align reads to ref genome  
-```
+```GCA_000762945.1_Bger_1.0_genomic.fna
 bwa mem -t 8 ref/GCA_000762945.1_Bger_1.0_genomic.fna aDNA/trimmed_aDNA/concat_trimmed_withoutLB.fastq.gz > concat_trimmed_withoutLB_aligned.sam &
 samtools view -bS concat_trimmed_withoutLB_aligned.sam > concat_trimmed_withoutLB_aligned.bam
 ```
@@ -119,3 +119,30 @@ Unknown Library 19140038 0 636056 11765670 3320468 0 0 0,173483
 
 -------
 - quality control (Kraken, Centrifuge etc to identify and quantify non-target reads). Substract these from your total reads
+
+------
+get coverage for each region:
+I already have
+```
+concat_trimmed_withoutLB_aligned.sam (I aligned reads to Bger_1.0)
+```
+convert .sam to .bam and sort it (I think its the same as sorted_concat_trimmed_withoutLB_aligned.bam)
+```
+samtools view -bS concat_trimmed_withoutLB_aligned.sam | samtools sort -o mapped_reads_sorted.bam
+```
+index
+```
+samtools index mapped_reads_sorted.bam
+```
+get coverage per position
+```
+samtools depth -a mapped_reads_sorted.bam > coverage.txt
+```
+put it in bins for easier visualization
+```
+bedtools makewindows -g ref/GCA_000762945.1_Bger_1.0_genomic.fna.fai -w 10000 | bedtools coverage -a - -b mapped_reads_sorted.bam > coverage_bins.txt
+```
+continue plotting in R
+
+
+
