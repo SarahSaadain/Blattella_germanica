@@ -142,6 +142,7 @@ put it in bins for easier visualization
 ```
 bedtools makewindows -g ref/GCA_000762945.1_Bger_1.0_genomic.fna.fai -w 10000 | bedtools coverage -a - -b mapped_reads_sorted.bam > coverage_bins.txt
 ```
+outputs 7 columns: chromosome(contig), start, end, num_reads, bases_covered, bin_size, Coverage_fraction  
 continue plotting in R
 
 
