@@ -143,7 +143,19 @@ put it in bins for easier visualization
 bedtools makewindows -g ref/GCA_000762945.1_Bger_1.0_genomic.fna.fai -w 10000 | bedtools coverage -a - -b mapped_reads_sorted.bam > coverage_bins.txt
 ```
 outputs 7 columns: chromosome(contig), start, end, num_reads, bases_covered, bin_size, Coverage_fraction  
-continue plotting in R
+continue plotting in R  
 
+get regions with highest coverage with this bash script:  
+```
+# Define the input and output files
+input_file="coverage_bins.txt"
+output_file="high_coverage_regions.txt"
 
-
+# Calculate mean coverage, sort, get the top 1% regions, and add header
+{
+    echo -e "chromosome\tstart\tend\tmean_coverage"  # Print header
+    awk '{mean_coverage=$4/$6; print $1, $2, $3, mean_coverage}' OFS="\t" "$input_file" | \
+    sort -k4,4nr | \
+    head -n $(($(wc -l < "$input_file") / 100))
+} > "$output_file"
+```
