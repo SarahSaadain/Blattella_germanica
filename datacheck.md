@@ -134,7 +134,8 @@ index
 ```
 samtools index mapped_reads_sorted.bam
 ```
-get coverage per position
+calculate the depth (or coverage) for each base position in the reference genome based on the aligned reads in the reference genome are included in the output  
+-a option: This flag ensures that all positions
 ```
 samtools depth -a mapped_reads_sorted.bam > coverage.txt
 ```
