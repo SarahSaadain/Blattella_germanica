@@ -139,7 +139,14 @@ calculate the depth (or coverage) for each base position in the reference genome
 ```
 samtools depth -a mapped_reads_sorted.bam > coverage.txt
 ```
-put it in bins for easier visualization
+put it in bins of 10 000 for easier visualization  
+Column 1: Chromosome or contig name.  
+Column 2: Start position of the window.  
+Column 3: End position of the window.  
+Column 4: Number of reads covering this window.  
+Column 5: Total bases covered by reads within this window.  
+Column 6: Window size (10,000).  
+Column 7: Fraction of bases covered within the window (coverage depth as a fraction of the window size) column5/column6=column7.  
 ```
 bedtools makewindows -g ref/GCA_000762945.1_Bger_1.0_genomic.fna.fai -w 10000 | bedtools coverage -a - -b mapped_reads_sorted.bam > coverage_bins.txt
 ```
