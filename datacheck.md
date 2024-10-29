@@ -146,11 +146,14 @@ Column 3: End position of the window.
 Column 4: Number of reads covering this window.  
 Column 5: Total bases covered by reads within this window.  
 Column 6: Window size (10,000).  
-Column 7: Fraction of bases covered within the window (coverage depth as a fraction of the window size) column5/column6=column7.  
+Column 7: Fraction of bases covered within the window (coverage depth as a fraction of the window size) = column5/column6  
+Column 7: in other words: bases within window/10000
 ```
 bedtools makewindows -g ref/GCA_000762945.1_Bger_1.0_genomic.fna.fai -w 10000 | bedtools coverage -a - -b mapped_reads_sorted.bam > coverage_bins.txt
 ``` 
 continue plotting in R  
+Column 8: mean_coverage=Column4(number of reads covering each window)/column6(window size)  
+Column 8: in other words: number of reads within window/10000  
 
 get regions with highest coverage with this bash script:  
 ```
