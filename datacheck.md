@@ -147,7 +147,7 @@ Column 4: Number of reads covering this window.
 Column 5: Total bases covered by reads within this window.  
 Column 6: Window size (10,000).  
 Column 7: Fraction of bases covered within the window (coverage depth as a fraction of the window size) = column5/column6  
-Column 7: in other words: bases within window/10000
+Column 7: In other words: bases within window/10000
 ```
 bedtools makewindows -g ref/GCA_000762945.1_Bger_1.0_genomic.fna.fai -w 10000 | bedtools coverage -a - -b mapped_reads_sorted.bam > coverage_bins.txt
 ``` 
