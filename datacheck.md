@@ -182,7 +182,8 @@ output_file = "median_coverage_per_bin.txt"
 bin_size = 10000
 
 # Read the input file into a pandas DataFrame
-coverage_data = pd.read_csv(input_file, sep='\s+', header=None, names=["contig", "position", "coverage"])
+coverage_data = pd.read_csv(input_file, sep='\s+', header=None, names=["contig", "position",
+"coverage"])
 
 # Calculate the bin index
 coverage_data['bin_index'] = (coverage_data['position'] - 1) // bin_size
@@ -201,5 +202,20 @@ median_coverage.columns = ['contig', 'start', 'end', 'median_coverage']
 # Save the results to a text file
 median_coverage.to_csv(output_file, sep='\t', index=False)
 
+# Group by contig and bin index, and calculate the median coverage
+median_coverage = coverage_data.groupby(['contig', 'bin_index'])['coverage'].median().reset_index()
+
+# Calculate the bin start and end positions
+median_coverage['bin_start'] = median_coverage['bin_index'] * bin_size + 1
+median_coverage['bin_end'] = median_coverage['bin_start'] + bin_size - 1
+
+# Select relevant columns for output
+median_coverage = median_coverage[['contig', 'bin_start', 'bin_end', 'coverage']]
+median_coverage.columns = ['contig', 'start', 'end', 'median_coverage']
+
+# Save the results to a text file
+median_coverage.to_csv(output_file, sep='\t', index=False)
+
 print(f"Median coverage per bin has been saved to {output_file}.")
+
 ```
