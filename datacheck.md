@@ -219,3 +219,8 @@ median_coverage.to_csv(output_file, sep='\t', index=False)
 print(f"Median coverage per bin has been saved to {output_file}.")
 
 ```
+**plotting fastqc stuff in R**
+sanity check  
+```
+file="296005_S26_R1_001_trim.fastq"; echo "$file: $(grep -c '^@' "$file") sequences, $(awk 'NR % 4 == 2' "$file" | awk '{total+=length($0)} END {print total}') bases"
+```
