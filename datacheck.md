@@ -82,9 +82,9 @@ I already have
 ```
 concat_trimmed_withoutLB_aligned.sam (I aligned reads to Bger_1.0)
 ```
-I redid the same for the better ref genome  
+I redid the same with the better ref genome  
 ```
-bwa mem ../../ref/GCA_000762945.2_Bger_2.0_genomic.fna concat_trimmed_withoutLB.fastq.gz > concat_trimmed_withoutLB_mapBger2.sam
+bwa mem -t 6 ../../ref/GCA_000762945.2_Bger_2.0_genomic.fna concat_trimmed_withoutLB.fastq.gz > concat_trimmed_withoutLB_mapBger2.sam
 ```
 
 convert .sam to .bam and sort it (I think its the same as sorted_concat_trimmed_withoutLB_aligned.bam)
