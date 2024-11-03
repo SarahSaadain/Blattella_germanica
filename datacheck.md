@@ -113,7 +113,10 @@ Column 7: Fraction of bases covered within the window (coverage depth as a fract
 Column 7: In other words: bases within window/10000
 ```
 bedtools makewindows -g ref/GCA_000762945.1_Bger_1.0_genomic.fna.fai -w 10000 | bedtools coverage -a - -b mapped_reads_sorted.bam > coverage_bins.txt
-``` 
+bedtools makewindows -g ../../ref/GCA_000762945.2_Bger_2.0_genomic.fna.fai -n 1 | bedtools coverage -a - -b mapBger2_sorted.bam > breath_coverage_mapBger2.txt
+```
+https://open.bioqueue.org/home/knowledge/showKnowledge/sig/bedtools-makewindows  
+
 continue plotting in R  
 Column 8: mean_coverage=Column4(number of reads covering each window)/column6(window size)  
 Column 8: in other words: number of reads within window/10000  
