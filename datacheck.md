@@ -89,11 +89,13 @@ bwa mem -t 6 ../../ref/GCA_000762945.2_Bger_2.0_genomic.fna concat_trimmed_witho
 
 convert .sam to .bam and sort it (I think its the same as sorted_concat_trimmed_withoutLB_aligned.bam)
 ```
-samtools view -bS concat_trimmed_withoutLB_aligned.sam | samtools sort -o mapped_reads_sorted.bam
+samtools view -bS concat_trimmed_withoutLB_aligned.sam | samtools sort -o mapped_reads_sorted.bam  
+samtools view -bS concat_trimmed_withoutLB_mapBger2.sam | samtools sort -o mapBger2_sorted.bam (Bger2.0 ref)
 ```
 index
 ```
 samtools index mapped_reads_sorted.bam
+samtools index mapBger2_sorted.bam
 ```
 calculate the depth (or coverage) for each base position in the reference genome based on the aligned reads 
 -a option: This flag ensures that all positions in the reference genome are included in the output, even if no reads map to them  
