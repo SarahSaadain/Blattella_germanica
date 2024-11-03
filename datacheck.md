@@ -73,50 +73,6 @@ samtools view -c -f 1024 marked_duplicates.bam
 (Number of Duplicate Reads / Number of Total Reads) ×100 = Duplication Rate
 ( 1 594 605 / 30 481 946 ) x100 = 5.223 %
 
-
-
-
-
-
-
-
------
-with Picard
-```
-picard MarkDuplicates I=raw_concat_Bger1.1_aligned_sorted.bam O=marked_duplicates.bam M=marked_dup_metrics.txt
-cat marked_dup_metrics.txt
-```
-inside the marked_dup_metrics.txt:  
-MarkDuplicates INPUT=[raw_concat_Bger1.1_aligned_sorted.bam] OUTPUT=marked_duplicates.bam METRICS_FILE=marked_dup_metrics.txt    MAX_SEQUENCES_FOR_DISK_READ_ENDS_MAP=50000  
-MAX_FILE_HANDLES_FOR_READ_ENDS_MAP=8000  
-SORTING_COLLECTION_SIZE_RATIO=0.25  
-TAG_DUPLICATE_SET_MEMBERS=false  
-REMOVE_SEQUENCING_DUPLICATES=false  
-TAGGING_POLICY=DontTag  
-CLEAR_DT=true 
-DUPLEX_UMI=false 
-ADD_PG_TAG_TO_READS=true 
-REMOVE_DUPLICATES=false 
-ASSUME_SORTED=false 
-DUPLICATE_SCORING_STRATEGY=SUM_OF_BASE_QUALITIES 
-PROGRAM_RECORD_ID=MarkDuplicates 
-PROGRAM_GROUP_NAME=MarkDuplicates 
-READ_NAME_REGEX=<optimized capture of last three ':' separated fields as numeric values> 
-OPTICAL_DUPLICATE_PIXEL_DISTANCE=100 
-MAX_OPTICAL_DUPLICATE_SET_SIZE=300000 
-VERBOSITY=INFO QUIET=false 
-VALIDATION_STRINGENCY=STRICT 
-COMPRESSION_LEVEL=5 MAX_RECORDS_IN_RAM=500000 
-CREATE_INDEX=false 
-CREATE_MD5_FILE=false 
-GA4GH_CLIENT_SECRETS=client_secrets.json 
-USE_JDK_DEFLATER=false USE_JDK_INFLATER=false
-htsjdk.samtools.metrics.StringHeader
-
-METRICS CLASS picard.sam.DuplicationMetrics
-LIBRARY UNPAIRED_READS_EXAMINED READ_PAIRS_EXAMINED SECONDARY_OR_SUPPLEMENTARY_RDS UNMAPPED_READS UNPAIRED_READ_DUPLICATES READ_PAIR_DUPLICATES READ_PAIR_OPTICAL_DUPLICATES PERCENT_DUPLICATION ESTIMATED_LIBRARY_SIZE
-Unknown Library 19140038 0 636056 11765670 3320468 0 0 0,173483
-
 -------
 - quality control (Kraken, Centrifuge etc to identify and quantify non-target reads). Substract these from your total reads
 
@@ -126,6 +82,11 @@ I already have
 ```
 concat_trimmed_withoutLB_aligned.sam (I aligned reads to Bger_1.0)
 ```
+I redid the same for the better ref genome  
+```
+bwa mem ../../ref/GCA_000762945.2_Bger_2.0_genomic.fna concat_trimmed_withoutLB.fastq.gz > concat_trimmed_withoutLB_mapBger2.sam
+```
+
 convert .sam to .bam and sort it (I think its the same as sorted_concat_trimmed_withoutLB_aligned.bam)
 ```
 samtools view -bS concat_trimmed_withoutLB_aligned.sam | samtools sort -o mapped_reads_sorted.bam
