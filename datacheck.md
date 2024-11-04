@@ -103,6 +103,49 @@ calculate the depth (or coverage) for each base position in the reference genome
 samtools depth -a mapped_reads_sorted.bam > coverage.txt
 samtools depth -a mapBger2_sorted.bam > mapBger2_depth.txt
 ```
+mapBger2_depth.txt is too large to open it in R  
+there I split it  
+```
+# split_depth.py
+
+# Define the size ranges
+ranges = {
+    "0-1000": [],
+    "1001-10000": [],
+    "10001-100000": [],
+    "100001-1000000": [],
+}
+
+# Open the input file
+with open('mapBger2_depth.txt', 'r') as infile:
+    for line in infile:
+        parts = line.split()
+        if len(parts) < 3:  # Skip if the line doesn't have enough columns
+            continue
+        
+        # Extract base position
+        base_position = int(parts[1])  # Convert base position to integer
+
+        # Assign line to the appropriate range
+        if base_position <= 1000:
+            ranges["0-1000"].append(line)
+        elif base_position <= 10000:
+            ranges["1001-10000"].append(line)
+        elif base_position <= 100000:
+            ranges["10001-100000"].append(line)
+        elif base_position <= 1000000:
+            ranges["100001-1000000"].append(line)
+
+# Write each range to a separate file
+for key, lines in ranges.items():
+    if lines:  # Only create a file if there are lines to write
+        with open(f'mapBger2_depth_{key}.txt', 'w') as outfile:
+            outfile.writelines(lines)
+
+print("Splitting complete. Files created for each size range.")
+````
+
+
 put it in bins of 10 000 for easier visualization  
 Column 1: Chromosome or contig name.  
 Column 2: Start position of the window.  
