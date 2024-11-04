@@ -77,22 +77,22 @@ samtools view -c -f 1024 marked_duplicates.bam
 - quality control (Kraken, Centrifuge etc to identify and quantify non-target reads). Substract these from your total reads
 
 ------
-get coverage for each region:
-I already have
+***get coverage for each region:***
+I already have the mapped file from another step:  
 ```
 concat_trimmed_withoutLB_aligned.sam (I aligned reads to Bger_1.0)
 ```
 I redid the same with the better ref genome  
+mapped aDNA to Bger2.0 (the newest ref genome)
 ```
 bwa mem -t 6 ../../ref/GCA_000762945.2_Bger_2.0_genomic.fna concat_trimmed_withoutLB.fastq.gz > concat_trimmed_withoutLB_mapBger2.sam
 ```
-
-convert .sam to .bam and sort it (I think its the same as sorted_concat_trimmed_withoutLB_aligned.bam)
+convert .sam to .bam and sort it  
 ```
 samtools view -bS concat_trimmed_withoutLB_aligned.sam | samtools sort -o mapped_reads_sorted.bam  
 samtools view -bS concat_trimmed_withoutLB_mapBger2.sam | samtools sort -o mapBger2_sorted.bam (Bger2.0 ref)
 ```
-index
+index  
 ```
 samtools index mapped_reads_sorted.bam
 samtools index mapBger2_sorted.bam
@@ -101,6 +101,7 @@ calculate the depth (or coverage) for each base position in the reference genome
 -a option: This flag ensures that all positions in the reference genome are included in the output, even if no reads map to them  
 ```
 samtools depth -a mapped_reads_sorted.bam > coverage.txt
+samtools depth -a mapBger2_sorted.bam > mapBger2_depth.txt
 ```
 put it in bins of 10 000 for easier visualization  
 Column 1: Chromosome or contig name.  
