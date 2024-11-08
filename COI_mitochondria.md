@@ -1,4 +1,4 @@
-***Compare aDNA COI with recent COI***
+**Compare aDNA COI with recent COI**
 
 *Idea:
 map known COI sequence to ref genome
