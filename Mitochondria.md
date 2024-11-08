@@ -30,7 +30,8 @@ index
 
 **map each sample individually**  
 ```
-bwa mem -t 8 /Users/ssaadain/Documents/cockroach/ref/GCA_000762945.2_Bger_2.0_genomic.fna /Users/ssaadain/Documents/cockroach/aDNA/trimmed_aDNA/296004_S25_R1_001_trim.fastq.gz > /Users/ssaadain/Documents/cockroach/aDNA/mapped/296004_S25_R1_001_aligned.sam```
+bwa mem -t 8 /Users/ssaadain/Documents/cockroach/ref/GCA_000762945.2_Bger_2.0_genomic.fna /Users/ssaadain/Documents/cockroach/aDNA/trimmed_aDNA/296004_S25_R1_001_trim.fastq.gz > /Users/ssaadain/Documents/cockroach/aDNA/mapped/296004_S25_R1_001_aligned.sam
+```
 usw  
 
 
