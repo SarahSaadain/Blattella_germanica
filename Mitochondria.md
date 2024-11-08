@@ -30,29 +30,9 @@ index
 
 **map each sample individually**  
 ```
-#!/bin/bash
+bwa mem -t 8 /Users/ssaadain/Documents/cockroach/ref/GCA_000762945.2_Bger_2.0_genomic.fna /Users/ssaadain/Documents/cockroach/aDNA/trimmed_aDNA/296004_S25_R1_001_trim.fastq.gz > /Users/ssaadain/Documents/cockroach/aDNA/mapped/296004_S25_R1_001_aligned.sam```
+usw  
 
-# Define paths
-ref="/Users/ssaadain/Documents/cockroach/ref/GCA_000762945.2_Bger_2.0_genomic.fna"
-trimmed_dir="/Users/ssaadain/Documents/cockroach/aDNA/trimmed_aDNA"
-mapped_dir="/Users/ssaadain/Documents/cockroach/aDNA/mapped"
-
-# Loop through each trimmed file
-for fastq_file in "$trimmed_dir"/*_trim.fastq.gz; do
-    # Extract base name without path and extension
-    base_name=$(basename "$fastq_file" _trim.fastq.gz)
-    
-    # Define output SAM file path
-    output_sam="$mapped_dir/${base_name}_aligned.sam"
-    
-    # Run bwa mem with 8 threads
-    bwa mem -t 8 "$ref" "$fastq_file" > "$output_sam" &
-done
-
-# Wait for all background processes to complete
-wait
-echo "Alignment complete for all files."
-```
 
 
 
