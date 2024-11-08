@@ -19,3 +19,5 @@ Create summary statistics of the alignment
 Get the location from 3rd and 4th column to find the read in IGV  
 ```samtools view COI_voucherAC2_alignment_sorted.bam```  
 Scaffold KZ616132.1	position 4294  
+Exact region in the ref genome: KZ616132.1:4.294 - KZ616132.1:5.826
+
