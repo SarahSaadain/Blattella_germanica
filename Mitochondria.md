@@ -116,19 +116,20 @@ for sam_file in *.sam; do
     echo "Filtered and indexed BAM file created: $coi_bam"
 done
 
+echo "Processing complete for all files."
+```
+
 **map modern .fasta files to ref genome**
 
-
-
-echo "Processing complete for all files."
 ```
 installed ANGSD  
 ```
 
-
-
-
-
-
+***careful***
+rename AC2 and XA1 in modern so they fit in the others
+COI_voucherAC2_alignment.bam		
+COI_voucherAC2_alignment.sam		
+COI_voucherAC2_alignment_sorted.bam
+COI_voucherAC2_alignment_sorted.bam.bai
 
 
