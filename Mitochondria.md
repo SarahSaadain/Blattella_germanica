@@ -27,6 +27,33 @@ filter for this region
 index
 ```samtools index COI_aDNA_reads.bam```
 
+**map each sample individually**  
+```
+#!/bin/bash
+
+# Define paths
+ref="/Users/ssaadain/Documents/cockroach/ref/GCA_000762945.1_Bger_1.0_genomic.fna"
+trimmed_dir="/Users/ssaadain/Documents/cockroach/aDNA/trimmed_aDNA"
+mapped_dir="/Users/ssaadain/Documents/cockroach/aDNA/mapped"
+
+# Loop through each trimmed file
+for fastq_file in "$trimmed_dir"/*_trim.fastq.gz; do
+    # Extract base name without path and extension
+    base_name=$(basename "$fastq_file" _trim.fastq.gz)
+    
+    # Define output SAM file path
+    output_sam="$mapped_dir/${base_name}_aligned.sam"
+    
+    # Run bwa mem with 8 threads
+    bwa mem -t 8 "$ref" "$fastq_file" > "$output_sam" &
+done
+
+# Wait for all background processes to complete
+wait
+echo "Alignment complete for all files."```
+
+
+
 
 
 
