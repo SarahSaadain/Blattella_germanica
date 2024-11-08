@@ -51,7 +51,8 @@ done
 
 # Wait for all background processes to complete
 wait
-echo "Alignment complete for all files."```
+echo "Alignment complete for all files."
+```
 
 
 
