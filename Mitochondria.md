@@ -28,6 +28,7 @@ echo -e "KZ616132.1\t4294000\t5826000" > region.bed
 samtools view -b -L region.bed mapBger2_sorted.bam > COI_aDNA_reads.bam
 
 # Step 3: Clean up the temporary region file (optional)
-rm region.bed``` 
+rm region.bed```
+
 
 
