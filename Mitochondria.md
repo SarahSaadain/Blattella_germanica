@@ -27,6 +27,45 @@ filter for this region
 index
 ```samtools index COI_aDNA_reads.bam```
 
+**map modern COI to ref genome and location of COI containing.bed file**
+```#!/bin/bash
+
+# Variables
+REFERENCE_GENOME="/Users/ssaadain/Documents/cockroach/ref/GCA_000762945.2_Bger_2.0_genomic.fna"  # Path to the reference genome
+COI_BED_FILE="../COI_region.bed"  # Path to the COI region BED file (one directory up)
+OUTPUT_DIR="./aligned_bam_files"  # Directory to store BAM files
+
+# Create the output directory if it doesn't exist
+mkdir -p $OUTPUT_DIR
+
+# Step 1: Align the modern FASTA files to the COI region of the reference genome using bwa mem
+echo "Aligning modern FASTA files to COI region of reference genome..."
+for fasta_file in *.fasta; do
+    # Align the FASTA file to the COI region using the -L option to limit to the COI region
+    echo "Aligning $fasta_file..."
+    bwa mem -L $COI_BED_FILE $REFERENCE_GENOME $fasta_file > $OUTPUT_DIR/${fasta_file%.fasta}.sam
+done
+
+# Step 2: Convert SAM files to BAM, sort, and index them
+echo "Converting SAM files to BAM, sorting, and indexing..."
+for sam_file in $OUTPUT_DIR/*.sam; do
+    # Convert SAM to BAM
+    samtools view -Sb $sam_file > ${sam_file%.sam}.bam
+    
+    # Sort the BAM file
+    samtools sort ${sam_file%.sam}.bam -o ${sam_file%.sam}_sorted.bam
+    
+    # Index the BAM file
+    samtools index ${sam_file%.sam}_sorted.bam
+    
+    # Clean up intermediate SAM file
+    rm $sam_file
+done
+
+echo "Conversion complete. BAM files are located in $OUTPUT_DIR."
+```
+
+
 **map each sample individually (not sure if necessary yet)**  
 ```
 bwa mem -t 8 /Users/ssaadain/Documents/cockroach/ref/GCA_000762945.2_Bger_2.0_genomic.fna /Users/ssaadain/Documents/cockroach/aDNA/trimmed_aDNA/296004_S25_R1_001_trim.fastq.gz > /Users/ssaadain/Documents/cockroach/aDNA/mapped/296004_S25_R1_001_aligned.sam
@@ -77,7 +116,13 @@ for sam_file in *.sam; do
     echo "Filtered and indexed BAM file created: $coi_bam"
 done
 
+**map modern .fasta files to ref genome**
+
+
+
 echo "Processing complete for all files."
+```
+installed ANGSD  
 ```
 
 
