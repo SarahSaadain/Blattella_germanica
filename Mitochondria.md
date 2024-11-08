@@ -19,5 +19,15 @@ Create summary statistics of the alignment
 Get the location from 3rd and 4th column to find the read in IGV  
 ```samtools view COI_voucherAC2_alignment_sorted.bam```  
 Scaffold KZ616132.1	position 4294  
-Exact region in the ref genome: KZ616132.1:4.294 - KZ616132.1:5.826
+Exact region in the ref genome: KZ616132.1:4.294 - KZ616132.1:5.826  
+Extract aDNA reads that map to the COI gene with a small script:  
+```# Step 1: Create a temporary file with the region coordinates in proper BED format
+echo -e "KZ616132.1\t4294000\t5826000" > region.bed
+
+# Step 2: Use samtools to filter the reads in the specified region
+samtools view -b -L region.bed mapBger2_sorted.bam > COI_aDNA_reads.bam
+
+# Step 3: Clean up the temporary region file (optional)
+rm region.bed``` 
+
 
