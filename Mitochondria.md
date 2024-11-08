@@ -20,6 +20,16 @@ Get the location from 3rd and 4th column to find the read in IGV
 ```samtools view COI_voucherAC2_alignment_sorted.bam```  
 Scaffold KZ616132.1	position 4294  
 Exact region in the ref genome: KZ616132.1:4.294 - KZ616132.1:5.826  
+make a bedfile for this region  
+``` echo -e "KZ616132.1\t4294\t5826" > region.bed``` 
+filter for this region  
+```samtools view -b -L region.bed mapBger2_sorted.bam > COI_aDNA_reads.bam```
+index
+```samtools index COI_aDNA_reads.bam```
+
+
+
+
 
 
 
