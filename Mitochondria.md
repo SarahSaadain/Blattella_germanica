@@ -27,12 +27,13 @@ filter for this region
 index
 ```samtools index COI_aDNA_reads.bam```
 
+
 **map each sample individually**  
 ```
 #!/bin/bash
 
 # Define paths
-ref="/Users/ssaadain/Documents/cockroach/ref/GCA_000762945.1_Bger_1.0_genomic.fna"
+ref="/Users/ssaadain/Documents/cockroach/ref/GCA_000762945.2_Bger_2.0_genomic.fna"
 trimmed_dir="/Users/ssaadain/Documents/cockroach/aDNA/trimmed_aDNA"
 mapped_dir="/Users/ssaadain/Documents/cockroach/aDNA/mapped"
 
