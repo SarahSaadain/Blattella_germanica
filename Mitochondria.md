@@ -18,3 +18,4 @@ Create summary statistics of the alignment
 ```samtools flagstat COI_voucherAC2_alignment_sorted.bam```  
 Get the location from 3rd and 4th column to find the read in IGV  
 ```samtools view COI_voucherAC2_alignment_sorted.bam```  
+Scaffold KZ616132.1	position 4294  
