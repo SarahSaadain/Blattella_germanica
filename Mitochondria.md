@@ -8,7 +8,7 @@ Idea:
 
 Downloaded COI sequences from two samples from Tang 2024 paper downloaded: voucherAC2 and voucherXA1:  
 https://www.ncbi.nlm.nih.gov/nuccore/PP692292  
-Map it to Bger2.0 ref genome
+Map it to Bger2.0 ref genome  
 ```bwa mem ../ref/GCA_000762945.2_Bger_2.0_genomic.fna Bger_voucherAC2_COX1.fasta > COI_voucherAC2_alignment.sam```  
 Convert SAM to BAM  
 ```samtools view -S -b COI_voucherAC2_alignment.sam > COI_voucherAC2_alignment.bam```  
