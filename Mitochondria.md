@@ -48,26 +48,33 @@ OUTPUT_DIR="./COI_filtered_bams"  # Directory to save filtered BAM files
 mkdir -p "$OUTPUT_DIR"
 
 # Loop through each SAM file in the current directory
-for sam_file in *_aligned.sam; do
+for sam_file in *.sam; do
     # Extract the base name of the SAM file (without path and extension)
-    base_name=$(basename "$sam_file" _aligned.sam)
+    base_name=$(basename "$sam_file" .sam)
     
-    # Define the output BAM file name
-    output_bam="$OUTPUT_DIR/${base_name}_aligned.bam"
-    
-    # Convert SAM to BAM
+    # Convert the SAM file to a BAM file
     echo "Converting $sam_file to BAM..."
-    samtools view -Sb "$sam_file" > "$output_bam"
-    
-    # Filter the BAM file for reads that map to the COI region
-    filtered_bam="$OUTPUT_DIR/${base_name}_COI.bam"
-    echo "Filtering $output_bam for reads mapped to COI region..."
-    samtools view -b -L "$COI_REGION_BED" "$output_bam" > "$filtered_bam"
-    
+    bam_file="$OUTPUT_DIR/${base_name}.bam"
+    samtools view -bS "$sam_file" > "$bam_file"
+
+    # Sort the BAM file
+    echo "Sorting $bam_file..."
+    sorted_bam="$OUTPUT_DIR/${base_name}_sorted.bam"
+    samtools sort "$bam_file" -o "$sorted_bam"
+
+    # Filter the sorted BAM file for reads that map to the COI region
+    echo "Filtering $sorted_bam for reads mapped to COI region..."
+    coi_bam="$OUTPUT_DIR/${base_name}_COI.bam"
+    samtools view -b -L "$COI_REGION_BED" "$sorted_bam" > "$coi_bam"
+
     # Index the filtered BAM file
-    samtools index "$filtered_bam"
-    
-    echo "Filtered BAM file created: $filtered_bam"
+    echo "Indexing $coi_bam..."
+    samtools index "$coi_bam"
+
+    # Clean up intermediate files (optional)
+    rm "$bam_file" "$sorted_bam"
+
+    echo "Filtered and indexed BAM file created: $coi_bam"
 done
 
 echo "Processing complete for all files."
