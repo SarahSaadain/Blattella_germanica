@@ -35,7 +35,7 @@ bwa mem -t 8 /Users/ssaadain/Documents/cockroach/ref/GCA_000762945.2_Bger_2.0_ge
 **repeat filtering only for COI but for the individual aDNA files**  
 get the COI region  
 ```
-echo -e "KZ616132.1\t4294000\t5826000" > COI_region.bed
+echo -e "KZ616132.1\t4294\t5826" > COI_region.bed
 ```
 ```
 #!/bin/bash
