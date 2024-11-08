@@ -2,7 +2,7 @@
 
 
 Idea:  
-- Mitochondrial DNA should be more abundant, therefore look for mitochondrial Gene and commenly used marker COI
+- Mitochondrial DNA should be more abundant, therefore look for mitochondrial gene and commenly used marker COI
 - map known COI sequence to ref genome  
 - check if my aDNA mapped there too and look for differences   
 
