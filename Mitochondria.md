@@ -27,6 +27,8 @@ filter for this region
 index
 ```samtools index COI_aDNA_reads.bam```
 
+COI: KZ616132.1:4,291-5,823
+
 **map modern COI to ref genome and location of COI containing.bed file**
 ```#!/bin/bash
 
