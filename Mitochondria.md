@@ -125,11 +125,3 @@ echo "Processing complete for all files."
 installed ANGSD  
 ```
 
-***careful***
-rename AC2 and XA1 in modern so they fit in the others here /Users/ssaadain/Documents/cockroach/modern/COI_voucher_fasta/aligned_bam_files
-COI_voucherAC2_alignment.bam		
-COI_voucherAC2_alignment.sam		
-COI_voucherAC2_alignment_sorted.bam
-COI_voucherAC2_alignment_sorted.bam.bai
-
-
