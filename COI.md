@@ -14,6 +14,6 @@ convert sam to bam, sort and index with convert_sam2bam.py in scripts folder ~/s
 
 6 aDNA files (Shpak1, Shpak2, Shpak3, Dabney1, Dabney2, Dabney3) treated separetely  
 also mapped, sorted and indexed to the whole Bger2 with map_to_refBger2.py in scripts folder ~/scripts/  
-map only to COI-region KZ616132.1:4,291-5,823 by using script extract_region_from_bam.py in folder ~/scripts/ with COI_region.bed
+extract only COI-region KZ616132.1:4,291-5,823 by using script extract_region_from_bam.py in folder ~/scripts/ with COI_region.bed
 
 
