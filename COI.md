@@ -19,5 +19,9 @@ extract only COI-region KZ616132.1:4,291-5,823 using extract_region_from_bam.py 
 
 **2, make consensus file**  
 first tried with bcftools with script test_make_consensus.py in folder ~/scripts/trials, this instead created a variant-file  
-used ANGSD instead (publication: https://www.mdpi.com/1422-0067/23/9/4651)  
+
+used ANGSD instead (publication: https://www.mdpi.com/1422-0067/23/9/4651)
+using the script create_consensus_ANGSD.py using "-doFasta 2" and "-doCounts 1"  
 this created consensus sequences for all the aDNA reads, the rest is replaced by "N"  
+
+the output gets then mapped again (map_to_refBger2.py), sam converted to bam (convert_sam2bam.py) to view it on IGV  
