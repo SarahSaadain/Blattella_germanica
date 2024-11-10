@@ -25,3 +25,18 @@ using the script create_consensus_ANGSD.py using "-doFasta 2" and "-doCounts 1"
 this created consensus sequences for all the aDNA reads, the rest is replaced by "N"  
 
 the output gets then mapped again (map_to_refBger2.py), sam converted to bam (convert_sam2bam.py) to view it on IGV  
+
+**3, make multiple sequence alignment**  
+first concatinate all .fasta files  
+cat *.fasta > combined_aDNAsequences.fasta  
+cat *.fasta > combined_modernDNAsequences.fasta  
+cat combined_aDNAsequences.fasta combined_modernDNAsequences.fasta > combined_sequences.fasta  
+run mafft had a problem:  
+seemed there were other characters besides ACGTN so i checked with ```grep -P '[^ACGTN]' combined_sequences.fasta``` 
+mafft --anysymbol combined_sequences.fasta > aligned_sequences.fasta (anysymbol to circumvent the error)  
+
+
+  
+
+
+
