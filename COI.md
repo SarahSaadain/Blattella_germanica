@@ -31,9 +31,10 @@ first concatinate all .fasta files
 cat *.fasta > combined_aDNAsequences.fasta  
 cat *.fasta > combined_modernDNAsequences.fasta  
 cat combined_aDNAsequences.fasta combined_modernDNAsequences.fasta > combined_sequences.fasta  
-run mafft had a problem:  
-seemed there were other characters besides ACGTN so i checked with ```grep -P '[^ACGTN]' combined_sequences.fasta``` 
-mafft --anysymbol combined_sequences.fasta > aligned_sequences.fasta (anysymbol to circumvent the error)  
+before running mafft:  
+make sure modern files have no zeilenumbruch in header and no extra empty line at the end  
+make also sure the aDNA consensus files are only the length of the COI gene and not the whole genome  
+run mafft ```mafft --auto combined_sequences.fasta > aligned_sequences.fasta```
 
 
   
