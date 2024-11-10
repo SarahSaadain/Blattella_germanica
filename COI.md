@@ -15,7 +15,7 @@ convert sam to bam, sort and index with convert_sam2bam.py in folder ~/scripts/
 also mapped, sorted and indexed to the whole Bger2 with map_to_refBger2.py in folder ~/scripts/  
 
 **extract COI only**  
-extract only COI-region KZ616132.1:4,291-5,823 using extract_region_from_bam.py in folder ~/scripts/ with COI_region.bed
+extract only COI-region KZ616132.1:4294-5826 using extract_region_from_bam.py in folder ~/scripts/ with COI_region.bed
 
 **2, make consensus file**  
 first tried with bcftools with script test_make_consensus.py in folder ~/scripts/trials, this instead created a variant-file  
