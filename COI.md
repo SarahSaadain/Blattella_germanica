@@ -34,6 +34,8 @@ cut COI region out of aDNA-consensus and reverse complement it with -i (to match
 ```samtools faidx 296004_S25_R1_001_aligned_sorted_COI_consensus.fasta.fa KZ616132.1:4291-5826 -i > output.fasta``` 
 created a script that automates this called get_COI_and_reverseComplement.py 
 
+check the .fasta file headers to include all infos
+
 then concatinate all .fasta files  
 cat *.fasta > combined_modern_aDNA.fasta  
 run mafft ```mafft --auto combined_modern_aDNA.fasta > aligned_all.fasta```
