@@ -27,12 +27,12 @@ this created consensus sequences for all the aDNA reads, the rest is replaced by
 the output gets then mapped again (map_to_refBger2.py), sam converted to bam (convert_sam2bam.py) to view it on IGV  
 
 **3, make multiple sequence alignment**  
+prep: make sure aDNA consensus files are only tje öength of the COI gene and reverse complemented:
 index aDNA-consensus with  
 ```samtools faidx 296004_S25_R1_001_aligned_sorted_COI_consensus.fasta.fa```  
 cut COI region out of aDNA-consensus and reverse complement it with -i (to match the modern COI)   
 ```samtools faidx 296004_S25_R1_001_aligned_sorted_COI_consensus.fasta.fa KZ616132.1:4291-5826 -i > output.fasta``` 
-
-make also sure the aDNA consensus files are only the length of the COI gene and not the whole genome  
+created a script that automates this called get_COI_and_reverseComplement.py 
 
 then concatinate all .fasta files  
 cat *.fasta > combined_aDNAsequences.fasta  
