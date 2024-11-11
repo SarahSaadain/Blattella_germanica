@@ -35,10 +35,8 @@ cut COI region out of aDNA-consensus and reverse complement it with -i (to match
 created a script that automates this called get_COI_and_reverseComplement.py 
 
 then concatinate all .fasta files  
-cat *.fasta > combined_aDNAsequences.fasta  
-cat *.fasta > combined_modernDNAsequences.fasta  
-cat combined_aDNAsequences.fasta combined_modernDNAsequences.fasta > combined_sequences.fasta  
-run mafft ```mafft --auto combined_sequences.fasta > aligned_sequences.fasta```
+cat *.fasta > combined_modern_aDNA.fasta  
+run mafft ```mafft --auto combined_modern_aDNA.fasta > aligned_all.fasta```
 
 
 
