@@ -32,7 +32,6 @@ index aDNA-consensus with
 cut COI region out of aDNA-consensus and reverse complement it with -i (to match the modern COI)   
 ```samtools faidx 296004_S25_R1_001_aligned_sorted_COI_consensus.fasta.fa KZ616132.1:4291-5826 -i > output.fasta``` 
 
-make sure modern files have no zeilenumbruch in header and no extra empty line at the end  
 make also sure the aDNA consensus files are only the length of the COI gene and not the whole genome  
 
 then concatinate all .fasta files  
