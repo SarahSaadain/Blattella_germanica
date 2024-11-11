@@ -28,7 +28,7 @@ the output gets then mapped again (map_to_refBger2.py), sam converted to bam (co
 
 **3, make multiple sequence alignment**  
 index aDNA-consensus with  
-```samtools faidx 296004_S25_R1_001_aligned_sorted_COI_consensus.fasta.fa``` 
+```samtools faidx 296004_S25_R1_001_aligned_sorted_COI_consensus.fasta.fa```  
 cut COI region out of aDNA-consensus and reverse complement it with -i (to match the modern COI)   
 ```samtools faidx 296004_S25_R1_001_aligned_sorted_COI_consensus.fasta.fa KZ616132.1:4291-5826 -i > output.fasta``` 
 
