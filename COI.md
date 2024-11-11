@@ -39,7 +39,7 @@ check the .fasta file headers to include all infos
 then concatinate all .fasta files  
 cat *.fasta > combined_all.fasta  
 run mafft ```mafft --auto combined_all.fasta > aligned_all.fasta```  
-better options in mafft for fragmented aDNA sequences: using a local pairwise alignment not global  
+better options in mafft for fragmented aDNA sequences: using a local pairwise alignment not global (output didn't change really)    
 ```mafft --auto --maxiterate 1000 --localpair combined_all.fasta > aligned_output.fasta```
 
 **4, plot haplotype network in R**
