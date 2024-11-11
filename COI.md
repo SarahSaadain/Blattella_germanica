@@ -38,9 +38,16 @@ then concatinate all .fasta files
 cat *.fasta > combined_modern_aDNA.fasta  
 run mafft ```mafft --auto combined_modern_aDNA.fasta > aligned_all.fasta```
 
+**4, plot haplotype network in R**
+```
+library(pegas)
+library(ggplot2)
 
+# Load and align sequences
+sequences <- read.dna("~/Documents/cockroach/aDNA/mapped/merged_files_for_mafft/aligned_all.fasta", format = "fasta")
+haplotypes <- haplotype(sequences)
 
-  
-
-
+# Construct and plot the network
+haplotype_network <- haploNet(haplotypes)
+plot(haplotype_network, size = attr(haplotype_network, "freq"))```
 
