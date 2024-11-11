@@ -49,5 +49,6 @@ haplotypes <- haplotype(sequences)
 
 # Construct and plot the network
 haplotype_network <- haploNet(haplotypes)
-plot(haplotype_network, size = attr(haplotype_network, "freq"))```
+plot(haplotype_network, size = attr(haplotype_network, "freq"))
+```
 
